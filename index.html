@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Rubia M. Francesco's portfolio page for Web and Computer Programming Certificate">
+    <meta name="author" content="George Olwal">
+    <title>George Olwal - Portfolio</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="scripts/scripts.js" defer></script>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <div class="logo">
+            <img src="images/profile.webp" alt="George Olwal's Profile Picture" class="profile-img">
+            <h1>George Olwal</h1>
+        </div>
+        
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Chamber</a></li>
+                <li><a href="#">GitHub Profile</a></li>
+                <li><a href="#">LinkedIn</a></li>
+            </ul>
+            <button class="hamburger">&#9776;</button> <!-- Hamburger menu for small screens -->
+        </nav>
+    </div>
+</header>
+
+<main>
+    <div  class="container-2">
+        <div class="container-3">
+            <!-- Section 1: Course Work -->
+            <section class="coursework">
+                <h2>Course Work</h2>
+                <ul id="courseList">
+                    <!-- Dynamically populated with JavaScript -->
+                </ul>
+            </section>
+        
+            <!-- Section 2: Tsavo, Kenya -->
+            <section class="location">
+                <h2>Tsavo, Kenya</h2>
+                <img src="images/tsavo-small.webp" alt="photo of Tsavo" class="location-img" loading="lazy">
+                <p>Giraffe of Tsavo</p>
+            </section>
+        
+        </div>
+       
+        <!-- Section 3: Web and Computer Programming Certificate -->
+        <div>
+            <section class="certificate">
+                <h2>Web and Computer Programming Certificate</h2>
+                <div class="filter-buttons">
+                    <button id="allCourses">All</button>
+                    <button id="cseCourses">CSE</button>
+                    <button id="wddCourses">WDD</button>
+                </div>
+        
+                <div id="courseCards" class="course-cards">
+                    <!-- Dynamically populated with JavaScript -->
+                </div>
+        
+                <!-- Total Credits -->
+                <p>Total Credits: <span id="totalCredits"></span></p>
+            </section>
+       </div>
+
+    </div>
+    
+</main>
+
+<footer>
+    <p>&copy; <span id="currentyear"></span> George Olwal, Kenya.</p>
+    <p id="lastModified"></p>
+</footer>
+
+</body>
+</html>
