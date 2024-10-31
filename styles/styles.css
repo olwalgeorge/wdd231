@@ -3,6 +3,8 @@
     --primary-color: #003366;
     --secondary-color: #d4edda;
     --text-color: white;
+    --hover-color: #004488;
+    --transition: background-color 0.3s ease-in-out;
 }
 
 body {
@@ -17,32 +19,33 @@ body {
 header {
     background-color: var(--primary-color);
     color: var(--text-color);
-    position: relative;
+    margin-bottom: 20px;
+    display: grid;
+}
+.container  {
+    display: grid;
+    grid-template-rows: auto 1fr;
 }
 
-.container {
+ .logo {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
-    max-width: 900px;
-    margin: 0 auto;
-}
+    justify-content: center;
+    padding: 10px 0;
 
-.logo {
-    display: flex;
-    align-items: center;
 }
 
 .logo img {
     width: 70px;
-    height: auto !important;
+    height: auto;
     margin-right: 10px;
 }
 
 .logo h1 {
     margin: 0;
     font-size: 24px;
+    padding-left: 1rem;
+
 }
 
 /* Navigation Styles */
@@ -52,11 +55,12 @@ nav {
 
 .nav-links {
     display: flex;
-    justify-content: flex-end;
+    background-color: black;
+    justify-content: space-evenly;
     align-items: center;
     list-style-type: none;
     margin: 0;
-    padding: 0;
+    padding: 10px 0;
 }
 
 .nav-links li {
@@ -71,7 +75,8 @@ nav {
 }
 
 .nav-links a:hover {
-    color: var(--secondary-color);
+    color: var(--hover-color);    
+    transition: var(--transition);
 }
 
 /* Hamburger Menu Styles */
@@ -128,7 +133,8 @@ nav {
 #courseList li {
     background-color: #fff;
     margin-bottom: 10px;
-    padding: 10px;
+    padding: 3px;
+    font-size: small;
     border-radius: 5px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     display: flex;
@@ -170,10 +176,17 @@ nav {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
     margin-bottom: 20px;
+    text-align: center;
+    
+    
 }
 
 .coursework h2, .location h2, .certificate h2 {
-    color: var(--primary-color);
+    color: var(--text-color);
+    background-color: var(--primary-color);
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px 5px 0 0;
     margin-top: 0;
 }
 
@@ -199,6 +212,9 @@ nav {
 /* Filter Buttons Styles */
 .filter-buttons {
     margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .filter-buttons button {
@@ -213,7 +229,7 @@ nav {
 }
 
 .filter-buttons button:hover {
-    background-color: #00254d;
+    background-color: var(--hover-color);
 }
 
 /* Footer Styles */
