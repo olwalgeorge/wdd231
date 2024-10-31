@@ -183,6 +183,7 @@ nav {
 
 .coursework h2, .location h2, .certificate h2 {
     color: var(--text-color);
+    
     background-color: var(--primary-color);
     padding: 10px;
     text-align: center;
@@ -233,16 +234,26 @@ nav {
 }
 
 /* Footer Styles */
-footer {
+footer {    
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: var(--primary-color);
     color: var(--text-color);
-    text-align: center;
-    padding: 10px;
-    margin-top: 20px;
 }
 
-footer p {
-    margin: 0;
+.footer-content {
+    text-align: center;
+    padding: 10px 0;
+}
+
+footer img {
+    height: 30px;
+    width: auto;
+    
+}
+.footer-content p {
+    margin: 0 10px;
 }
 
 /* Responsive Styles */
