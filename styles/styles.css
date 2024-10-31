@@ -214,20 +214,21 @@ nav {
 .filter-buttons {
     margin-bottom: 20px;
     display: flex;
-    
+    flex-wrap: wrap; 
     justify-content: center;
 }
 
 .filter-buttons button {
     background-color: var(--primary-color);
     color: var(--text-color);
+    font-size: 0.8rem;
     border: none;
     padding: 10px 15px;
-    margin-right: 10px;
+    margin: 0 5px 10px;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    width: 10%;
+    width: 30%;
     text-align: center;
 }
 
@@ -239,7 +240,7 @@ nav {
 footer {    
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center;       
     background-color: var(--primary-color);
     color: var(--text-color);
 }
@@ -261,20 +262,25 @@ footer img {
 /* Responsive Styles */
 @media (max-width: 768px) {
     header {
-        padding-top: 60px;
+        padding: 20px 0;
     }
-
+    
     .container {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         width: 100%;
     }
-
+    
+       
     .hamburger {
         display: block;
+        cursor: pointer;
+    }
+    
+    .header-content {
+        display: flex;
+        align-items: center;
     }
 
     .nav-links {
