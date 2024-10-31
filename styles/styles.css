@@ -250,10 +250,7 @@ footer img {
     margin: 0 10px;
 }
 
-.certificate {
-    content-visibility: auto;
-    contain-intrinsic-size: 1px 1000px;
-}
+
 
 @media (max-width: 768px) {
     header {
