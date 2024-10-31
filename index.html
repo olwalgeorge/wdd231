@@ -6,77 +6,76 @@
     <meta name="description" content="George Olwal's portfolio page for Web and Computer Programming Certificate, showcasing completed courses and projects.">
     <meta name="author" content="George Olwal">
     <title>George Olwal - WDD 231 - Portfolio</title>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" as="style">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap">
     <link rel="stylesheet" href="styles/styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
     <script src="scripts/scripts.js" defer></script>
 </head>
 <body>
-
-<header>
-    <div class="container">
-        <div class="logo">
-            <img src="images/profile.webp" alt="George Olwal's Profile Picture" class="profile-img">
-            <h1>George Olwal</h1>
-        </div>
-        
-        <nav>
-            <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
-                <span class="line"></span>
-                <span class="line"></span>
-                <span class="line"></span>
-            </button>
-            <ul class="nav-links">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Chamber</a></li>
-                <li><a href="https://github.com/olwalgeorge">GitHub Profile</a></li>
-                <li><a href="https://www.linkedin.com/in/george-olwal-590788236/">LinkedIn</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
-
-<main>
-    <div class="container-2">
-        <div class="container-3">
-            <section class="coursework">
-                <h2>Course Work</h2>
-                <ul id="courseList">
-                    <!-- Dynamically populated with JavaScript -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="images/profile.webp" alt="George Olwal's Profile Picture" width="60" height="90">
+                <h1>George Olwal</h1>
+            </div>
+            
+            <nav>
+                <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Chamber</a></li>
+                    <li><a href="https://github.com/olwalgeorge">GitHub Profile</a></li>
+                    <li><a href="https://www.linkedin.com/in/george-olwal-590788236/">LinkedIn</a></li>
                 </ul>
-            </section>
-        
-            <section class="location">
-                <h2>Tsavo, Kenya</h2>
-                <img src="images/tsavo-small.webp" alt="photo of Tsavo" class="location-img" loading="lazy">
-                <p>Giraffe of Tsavo</p>
-            </section>
+            </nav>
         </div>
-       
-        <div>
-            <section class="certificate">
-                <h2>Web and Computer Programming Certificate</h2>
-             
-                <div class="filter-buttons">
-                    <button id="allCourses">All</button>
-                    <button id="cseCourses">CSE</button>
-                    <button id="wddCourses">WDD</button>
-                </div>
-             
-                <div id="courseCards" class="course-cards"></div>
-            </section>
+    </header>
+
+    <main>
+        <div class="container-2">
+            <div class="container-3">
+                <section class="coursework">
+                    <h2>Course Work</h2>
+                    <ul id="courseList">
+                        <!-- Dynamically populated with JavaScript -->
+                    </ul>
+                </section>
+            
+                <section class="location">
+                    <h2>Tsavo, Kenya</h2>
+                    <div class="image-container">
+                        <img src="images/tsavo-small.webp" alt="photo of Tsavo" loading="lazy">
+                    </div>
+                    <p>Giraffe of Tsavo</p>
+                </section>
+            </div>
+           
+            <div>
+                <section class="certificate">
+                    <h2>Web and Computer Programming Certificate</h2>
+                 
+                    <div class="filter-buttons">
+                        <button id="allCourses">All</button>
+                        <button id="cseCourses">CSE</button>
+                        <button id="wddCourses">WDD</button>
+                    </div>
+                 
+                    <div id="courseCards" class="course-cards"></div>
+                </section>
+            </div>
         </div>
-    </div>
-</main>
+    </main>
 
-<footer>
-    <div class="footer-content">
-        <p> &copy; <span id="currentyear"></span> 🌸 George Olwal 🌸, Kenya. </p>
-        <p id="lastModified"></p>
-    </div>
-    <div class="flag-container"><img src="images/kenya-flag.webp" alt="Kenya flag" class="flag" loading="lazy"></div>
-</footer>
-
+    <footer>
+        <div class="footer-content">
+            <p> &copy; <span id="currentyear"></span> 🌸 George Olwal 🌸, Kenya. </p>
+            <p id="lastModified"></p>
+        </div>
+        <div class="flag-container"><img src="images/kenya-flag.webp" alt="Kenya flag" loading="lazy" width="45" height="30"></div>
+    </footer>
 </body>
 </html>

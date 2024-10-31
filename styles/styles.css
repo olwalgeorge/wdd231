@@ -1,4 +1,3 @@
-/* General Styles */
 :root {
     --primary-color: #003366;
     --secondary-color: #d4edda;
@@ -15,29 +14,27 @@ body {
     box-sizing: border-box;
 }
 
-/* Header Styles */
 header {
     background-color: var(--primary-color);
     color: var(--text-color);
     margin-bottom: 20px;
-    display: grid;
 }
-.container  {
+
+.container {
     display: grid;
     grid-template-rows: auto 1fr;
 }
 
- .logo {
+.logo {
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 10px 0;
-
 }
 
 .logo img {
-    width: 70px;
-    height: auto;
+    width: 60px;
+    height: 90px;
     margin-right: 10px;
 }
 
@@ -45,10 +42,8 @@ header {
     margin: 0;
     font-size: 24px;
     padding-left: 1rem;
-
 }
 
-/* Navigation Styles */
 nav {
     position: relative;
 }
@@ -79,7 +74,6 @@ nav {
     transition: var(--transition);
 }
 
-/* Hamburger Menu Styles */
 .hamburger {
     display: none;
     position: fixed;
@@ -108,13 +102,8 @@ nav {
 .hamburger .line:nth-child(2) { top: 50%; transform: translateY(-50%); }
 .hamburger .line:nth-child(3) { bottom: 0; }
 
-.hamburger.active .line:nth-child(1) { transform: translateY(10px) rotate(45deg); }
-.hamburger.active .line:nth-child(2) { opacity: 0; }
-.hamburger.active .line:nth-child(3) { transform: translateY(-10px) rotate(-45deg); }
-
-/* Main Content Styles */
 .container-2 {
-   margin: 0 20px;
+    margin: 0 20px;
 }
 
 .container-3 {
@@ -123,11 +112,11 @@ nav {
     gap: 20px;
 }
 
-/* Course List Styles */
 #courseList {
     padding: 0;
     margin: 0;
     list-style-type: none;
+    min-height: 200px;
 }
 
 #courseList li {
@@ -160,16 +149,23 @@ nav {
     font-style: italic;
 }
 
-/* Location Image Styles */
-.location-img {
+.image-container {
+    position: relative;
     width: 100%;
-    height: auto;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-top: 0.5rem;
+    padding-top: 56.25%; /* 16:9 aspect ratio */
 }
 
-/* Section Styles */
+.image-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 .coursework, .location, .certificate {
     background-color: #f9f9f9;
     border-radius: 8px;
@@ -177,13 +173,10 @@ nav {
     padding: 20px;
     margin-bottom: 20px;
     text-align: center;
-    
-    
 }
 
 .coursework h2, .location h2, .certificate h2 {
     color: var(--text-color);
-    
     background-color: var(--primary-color);
     padding: 10px;
     text-align: center;
@@ -191,7 +184,6 @@ nav {
     margin-top: 0;
 }
 
-/* Course Cards Styles */
 .course-cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -204,13 +196,13 @@ nav {
     padding: 5px;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: height 0.3s ease-in-out;
 }
 
 .course-card.completed {
     background-color: #39ff14;
 }
 
-/* Filter Buttons Styles */
 .filter-buttons {
     margin-bottom: 20px;
     display: flex;
@@ -236,7 +228,6 @@ nav {
     background-color: var(--hover-color);
 }
 
-/* Footer Styles */
 footer {    
     display: flex;
     justify-content: center;
@@ -253,13 +244,17 @@ footer {
 footer img {
     height: 30px;
     width: auto;
-    
 }
+
 .footer-content p {
     margin: 0 10px;
 }
 
-/* Responsive Styles */
+.certificate {
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 1000px;
+}
+
 @media (max-width: 768px) {
     header {
         padding: 20px 0;
@@ -272,7 +267,6 @@ footer img {
         width: 100%;
     }
     
-       
     .hamburger {
         display: block;
         cursor: pointer;
@@ -325,6 +319,7 @@ footer img {
 
     .logo img {
         width: 50px;
+        height: 50px;
     }
 
     .filter-buttons button {
