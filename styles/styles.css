@@ -207,7 +207,7 @@ nav {
 }
 
 .course-card.completed {
-    background-color: var(--secondary-color);
+    background-color: #39ff14;
 }
 
 /* Filter Buttons Styles */
@@ -228,7 +228,7 @@ nav {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    width: 30%;
+    width: 4rem;
     text-align: center;
 }
 
