@@ -1,4 +1,4 @@
-// Define the courses array with some courses marked as completed
+// Course data
 const courses = [
   {
     subject: 'CSE',
@@ -8,7 +8,7 @@ const courses = [
     certificate: 'Web and Computer Programming',
     description: 'This course will introduce students to programming. It will introduce the building blocks of programming languages (variables, decisions, calculations, loops, array, and input/output) and use them to solve problems.',
     technology: ['Python'],
-    completed: true // Marked as completed
+    completed: true
   },
   {
     subject: 'WDD',
@@ -18,7 +18,7 @@ const courses = [
     certificate: 'Web and Computer Programming',
     description: 'This course introduces students to the World Wide Web and to careers in web site design and development.',
     technology: ['HTML', 'CSS'],
-    completed: true // Marked as completed
+    completed: true
   },
   {
     subject: 'CSE',
@@ -28,7 +28,7 @@ const courses = [
     certificate: 'Web and Computer Programming',
     description: 'Students become more organized, efficient, and powerful programmers by learning functions.',
     technology: ['Python'],
-    completed: true // Marked as completed
+    completed: true
   },
   {
     subject: 'CSE',
@@ -38,7 +38,7 @@ const courses = [
     certificate: 'Web and Computer Programming',
     description: 'This course introduces classes and objects, encapsulation, inheritance, and polymorphism.',
     technology: ['C#'],
-    completed: true // Marked as completed
+    completed: true
   },
   {
     subject: 'WDD',
@@ -48,7 +48,7 @@ const courses = [
     certificate: 'Web and Computer Programming',
     description: 'Students will learn to create dynamic websites using JavaScript.',
     technology: ['HTML', 'CSS', 'JavaScript'],
-    completed: true // Marked as completed
+    completed: true
   },
   {
     subject: 'WDD',
@@ -65,49 +65,40 @@ const courses = [
 // Function to display courses dynamically based on filter
 function displayCourses(filter = "all") {
   const courseContainer = document.getElementById('courseCards');
-  courseContainer.innerHTML = ''; // Clear previous content
+  const courseList = document.getElementById('courseList');
+  courseContainer.innerHTML = '';
+  courseList.innerHTML = '';
 
   let totalCredits = 0;
 
-  // Filter the courses based on the selected filter (all/CSE/WDD)
   const filteredCourses = courses.filter(course => {
-      return filter === "all" || course.subject === filter;
+    return filter === "all" || course.subject === filter;
   });
 
-  // Iterate through filtered courses and create HTML for each course card
   filteredCourses.forEach(course => {
-      const courseCard = document.createElement('div');
-      courseCard.classList.add('course-card');
-      if (course.completed) {
-          courseCard.classList.add('completed'); // Add different class for completed courses
-      }
+    // Create course card
+    const courseCard = document.createElement('div');
+    courseCard.classList.add('course-card');
+    if (course.completed) {
+      courseCard.classList.add('completed');
+    }
+    courseCard.innerHTML = `
+      <h3>${course.subject} ${course.number}</h3>
+    `;
+    courseContainer.appendChild(courseCard);
 
-      // Create the inner HTML for each card
-      courseCard.innerHTML = `
-          <h3>${course.subject} ${course.number}</h3>
-      `;
+    // Create list item
+    const listItem = document.createElement('li');
+    listItem.innerHTML = `${course.subject} ${course.number} - ${course.title} - <span class="credits">${course.credits} credits</span>`;
+    courseList.appendChild(listItem);
 
-      // Append the card to the container
-      courseContainer.appendChild(courseCard);
-
-      totalCredits += course.credits; // Sum up the total credits
+    totalCredits += course.credits;
   });
 
-  // Display total credits dynamically
-      const courseList = document.getElementById('courseList');
-      courseList.innerHTML = ''; // Clear previous content
-
-      // Create a list item for each course
-      filteredCourses.forEach(course => {
-          const listItem = document.createElement('li');
-          listItem.innerHTML = `${course.subject} ${course.number} - ${course.title} - <span class="credits">${course.credits} credits</span>`;
-          courseList.appendChild(listItem);
-      });
-
-      // Append total credits
-      const totalListItem = document.createElement('li');
-      totalListItem.innerHTML = `Total Credits: <span>${totalCredits} credits</span>`;
-      courseList.appendChild(totalListItem);
+  // Append total credits
+  const totalListItem = document.createElement('li');
+  totalListItem.innerHTML = `Total Credits: <span>${totalCredits} credits</span>`;
+  courseList.appendChild(totalListItem);
 }
 
 // Event listeners for filter buttons
@@ -115,23 +106,45 @@ document.getElementById('allCourses').addEventListener('click', () => displayCou
 document.getElementById('cseCourses').addEventListener('click', () => displayCourses("CSE"));
 document.getElementById('wddCourses').addEventListener('click', () => displayCourses("WDD"));
 
-// Initial load of all courses
-displayCourses();
+// Hamburger menu functionality
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
 
-const hamburger = document.querySelector(".hamburger");
-const navLinks = document.querySelector(".nav-links");
-const body = document.body;
-
-hamburger.addEventListener("click", () => {
-    hamburger.classList.toggle("active");
-    navLinks.classList.toggle("active");
-    body.classList.toggle("menu-open");
-    hamburger.setAttribute("aria-expanded", hamburger.classList.contains("active"));
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('active');
+  navLinks.classList.toggle('active');
+  
+  // Update aria-expanded attribute
+  const isExpanded = hamburger.classList.contains('active');
+  hamburger.setAttribute('aria-expanded', isExpanded);
+  
+  // Optionally prevent scrolling when menu is open
+  document.body.style.overflow = isExpanded ? 'hidden' : '';
 });
 
-document.querySelectorAll(".nav-links a").forEach(n => n.addEventListener("click", () => {
-    hamburger.classList.remove("active");
-    navLinks.classList.remove("active");
-    body.classList.remove("menu-open");
-    hamburger.setAttribute("aria-expanded", "false");
-}));
+// Close menu when a link is clicked
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('active');
+    navLinks.classList.remove('active');
+    hamburger.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  });
+});
+
+// Close menu when clicking outside
+document.addEventListener('click', (event) => {
+  if (!hamburger.contains(event.target) && !navLinks.contains(event.target)) {
+    hamburger.classList.remove('active');
+    navLinks.classList.remove('active');
+    hamburger.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+});
+
+// Set current year and last modified date in footer
+document.getElementById('currentyear').textContent = new Date().getFullYear();
+document.getElementById('lastModified').textContent = `Last modified: ${document.lastModified}`;
+
+// Initial load of all courses
+displayCourses();

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Rubia M. Francesco's portfolio page for Web and Computer Programming Certificate">
+    <meta name="description" content="George Olwal's portfolio page for Web and Computer Programming Certificate">
     <meta name="author" content="George Olwal">
     <title>George Olwal - Portfolio</title>
     <link rel="stylesheet" href="styles/styles.css">
@@ -20,29 +20,24 @@
         </div>
         
         <nav>
+            <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </button>
             <ul class="nav-links">
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Chamber</a></li>
                 <li><a href="#">GitHub Profile</a></li>
                 <li><a href="#">LinkedIn</a></li>
             </ul>
-            <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
-                <div class="hamburger-icon">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>  
-                
-            </button>
         </nav>
     </div>
 </header>
 
 <main>
-    <div  class="container-2">
+    <div class="container-2">
         <div class="container-3">
-            <!-- Section 1: Course Work -->
             <section class="coursework">
                 <h2>Course Work</h2>
                 <ul id="courseList">
@@ -50,35 +45,27 @@
                 </ul>
             </section>
         
-            <!-- Section 2: Tsavo, Kenya -->
             <section class="location">
                 <h2>Tsavo, Kenya</h2>
                 <img src="images/tsavo-small.webp" alt="photo of Tsavo" class="location-img" loading="lazy">
                 <p>Giraffe of Tsavo</p>
             </section>
-        
         </div>
        
-        <!-- Section 3: Web and Computer Programming Certificate -->
         <div>
             <section class="certificate">
                 <h2>Web and Computer Programming Certificate</h2>
              
-                <!-- Filter Buttons -->
                 <div class="filter-buttons">
                     <button id="allCourses">All</button>
                     <button id="cseCourses">CSE</button>
                     <button id="wddCourses">WDD</button>
                 </div>
              
-                <!-- Course Cards Container -->
                 <div id="courseCards" class="course-cards"></div>
-             
-             </section>
-       </div>
-
+            </section>
+        </div>
     </div>
-    
 </main>
 
 <footer>
