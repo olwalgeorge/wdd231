@@ -148,3 +148,4 @@ document.getElementById('lastModified').textContent = `Last modified: ${document
 
 // Initial load of all courses
 displayCourses();
+

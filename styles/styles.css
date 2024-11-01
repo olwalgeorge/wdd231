@@ -35,8 +35,8 @@ header {
 }
 
 .logo img {
-    width: 60px;
-    height: 90px;
+    aspect-ratio: 3/2; 
+    object-fit:contain;
     margin-right: 10px;
 }
 
@@ -151,21 +151,30 @@ nav {
     font-style: italic;
 }
 
-.image-container {
-    position: relative;
+.image-container {    
     width: 100%;
-    padding-top: 56.25%; /* 16:9 aspect ratio */
+    max-width: 300px;   
 }
 
-.image-container img {
-    position: absolute;
-    top: 0;
-    left: 0;
+.image-container img {    
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;    
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.image-container p {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 5px;
+    text-align: center;
+    margin: 0;
 }
 
 .coursework, .location, .certificate {
@@ -251,8 +260,6 @@ footer img {
 .footer-content p {
     margin: 0 10px;
 }
-
-
 
 @media (max-width: 768px) {
     header {
