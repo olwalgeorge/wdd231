@@ -40,6 +40,28 @@ header {
     align-items: center;
 }
 
+.logo-title {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo {
+    width: 50px;
+    height: auto;
+}
+
+h1 {
+    font-size: 1.5rem;
+    margin: 0;
+    line-height: 1; /* Add this to remove extra space */
+}
+
+h1 span {
+    display: block;
+    font-size: 0.8em; /* Adjust size relative to parent */
+}
+
 .hamburger {
     display: none;
     background: none;
@@ -286,18 +308,36 @@ footer {
 
 /* Mobile Styles */
 @media screen and (max-width: 768px) {
-    .directory.list-view .business-card {
-        grid-template-columns: 1fr;
-        gap: 0.25rem;
-        padding: 0.75rem;
+    .nav-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
     }
-    
-    .directory.list-view .business-card h2,
-    .directory.list-view .business-card p {
-        font-size: 0.85rem;
+
+    .logo-title {
+        flex-direction: row;
+        align-items: center;
+        gap: 0.5rem;
     }
+
+    .logo {
+        width: 40px;
+    }
+
+    h1 {
+        font-size: 1rem;
+        margin: 0;
+    }
+
+    h1 span {
+        font-size: 0.8em;
+        display: block;
+    }
+
     .hamburger {
         display: block;
+        order: 2;
     }
 
     nav ul {
@@ -315,7 +355,6 @@ footer {
         display: flex;
     }
 
-    /* View controls on mobile */
     .view-controls {
         text-align: center;
         margin-bottom: 1rem;
@@ -326,13 +365,11 @@ footer {
         font-size: 0.9rem;
     }
 
-    /* Force single column layout on mobile */
     .directory {
         grid-template-columns: 1fr;
         gap: 1rem;
     }
 
-    /* Force card layout for mobile */
     .business-card {
         flex-direction: column;
         text-align: center;
@@ -342,5 +379,16 @@ footer {
     .business-card img {
         max-width: 150px;
         margin-bottom: 1rem;
+    }
+
+    .directory.list-view .business-card {
+        grid-template-columns: 1fr;
+        gap: 0.25rem;
+        padding: 0.75rem;
+    }
+    
+    .directory.list-view .business-card h2,
+    .directory.list-view .business-card p {
+        font-size: 0.85rem;
     }
 }
