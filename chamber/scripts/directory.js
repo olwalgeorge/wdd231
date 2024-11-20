@@ -1,4 +1,3 @@
-// directory.js
 document.addEventListener('DOMContentLoaded', () => {
     // DOM Elements
     const hamburger = document.querySelector('.hamburger');
@@ -50,6 +49,23 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // Display members
+    function displayMembers(members) {
+        directory.innerHTML = members.map(member => `
+            <div class="business-card membership-${member.membershipLevel}">
+                <img src="images/${member.image}" alt="${member.name} logo">
+                <div class="business-info">
+                    <h2>${member.name}</h2>
+                    <p class="address">${member.address}</p>
+                    <p class="phone">${member.phone}</p>
+                    <p class="website"><a href="${member.website}" target="_blank" rel="noopener">${member.website.replace(/^https?:\/\//, '')}</a></p>
+                    <p class="description">${member.description}</p>
+                    ${getMembershipBadge(member.membershipLevel)}
+                </div>
+            </div>
+        `).join('');
+    }
+
     // Get membership level badge
     function getMembershipBadge(level) {
         switch(level) {
@@ -64,23 +80,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Display members
-    function displayMembers(members) {
-        directory.innerHTML = members.map(member => `
-            <div class="business-card membership-${member.membershipLevel}">
-                <img src="images/${member.image}" alt="${member.name} logo">
-                <div class="business-info">
-                    <h2>${member.name}</h2>
-                    <p class="description">${member.description}</p>
-                    <p class="address">${member.address}</p>
-                    <p class="phone">${member.phone}</p>
-                    <p class="website"><a href="${member.website}" target="_blank" rel="noopener">Visit Website</a></p>
-                    ${getMembershipBadge(member.membershipLevel)}
-                </div>
-            </div>
-        `).join('');
-    }
-
     // Close mobile menu when clicking outside
     document.addEventListener('click', (e) => {
         if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
@@ -88,10 +87,6 @@ document.addEventListener('DOMContentLoaded', () => {
             hamburger.setAttribute('aria-expanded', 'false');
         }
     });
-
-    // Update footer information
-    document.getElementById('year').textContent = new Date().getFullYear();
-    document.getElementById('lastModified').textContent = document.lastModified;
 
     // Initialize directory
     getMembers();
