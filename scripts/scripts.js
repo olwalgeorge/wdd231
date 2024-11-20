@@ -149,3 +149,16 @@ document.getElementById('lastModified').textContent = `Last modified: ${document
 // Initial load of all courses
 displayCourses();
 
+
+
+document.addEventListener('DOMContentLoaded', function () {
+
+  const hamburger = document.getElementById('hamburger');
+  const navMenu = document.getElementById('menu');
+
+  // Toggle the navigation menu when hamburger is clicked
+  hamburger.addEventListener('click', function () {
+
+      navMenu.classList.toggle('open'); // Toggle 'open' class to show/hide menu
+  });
+});

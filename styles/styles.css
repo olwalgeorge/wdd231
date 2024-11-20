@@ -76,6 +76,16 @@ nav {
     transition: var(--transition);
 }
 
+.nav-links a.active {
+    color: var(--secondary-color);
+    border-bottom: 2px solid var(--secondary-color);
+}
+
+.nav-links a:not(.active):hover {
+    color: var(--secondary-color);
+    transition: var(--transition);
+}
+
 .hamburger {
     display: none;
     position: fixed;

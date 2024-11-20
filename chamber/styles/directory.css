@@ -1,0 +1,224 @@
+/* directory.css */
+:root {
+    --primary-color: #003366;
+    --secondary-color: #666666;
+    --background-color: #f5f5f5;
+    --card-background: #ffffff;
+    --text-color: #333333;
+    --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --card-radius: 8px;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    line-height: 1.6;
+}
+
+/* Header Styles */
+header {
+    background-color: var(--primary-color);
+    padding: 1rem;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+nav ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: var(--transition);
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Main Content */
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* View Controls */
+.view-controls {
+    text-align: right;
+    margin-bottom: 2rem;
+}
+
+.view-btn {
+    padding: 0.5rem 1rem;
+    background: var(--card-background);
+    border: 1px solid var(--secondary-color);
+    cursor: pointer;
+    margin-left: 0.5rem;
+    border-radius: 4px;
+    transition: var(--transition);
+}
+
+.view-btn.active {
+    background: var(--primary-color);
+    color: white;
+}
+
+/* Directory Styles */
+.directory {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.directory.list-view {
+    grid-template-columns: 1fr;
+}
+
+.directory.list-view .business-card {
+    flex-direction: row;
+    text-align: left;
+    align-items: center;
+    padding: 1.5rem;
+}
+
+.directory.list-view .business-card img {
+    max-width: 150px;
+    margin-right: 2rem;
+    margin-bottom: 0;
+}
+
+.business-card {
+    background: var(--card-background);
+    border-radius: var(--card-radius);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.business-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.business-card img {
+    max-width: 200px;
+    height: auto;
+    margin-bottom: 1.5rem;
+    object-fit: contain;
+}
+
+.business-card h2 {
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.business-card p {
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+}
+
+.business-card a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.business-card a:hover {
+    text-decoration: underline;
+}
+
+/* Footer Styles */
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 2rem;
+    margin-top: 4rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--primary-color);
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    /* Hide view controls on mobile */
+    .desktop-only {
+        display: none;
+    }
+
+    /* Force single column layout on mobile */
+    .directory {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    /* Force card layout for mobile */
+    .business-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.5rem;
+    }
+
+    .business-card img {
+        max-width: 150px;
+        margin-bottom: 1rem;
+    }
+}

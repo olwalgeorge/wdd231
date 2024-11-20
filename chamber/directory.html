@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Business Directory">
+    <meta name="author" content="Your Name">
+    
+    <title>Business Directory</title>
+    
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="styles/directory.css">
+</head>
+<body>
+    <header>
+        <div class="nav-wrapper">
+            <h1>Business Directory</h1>
+            <button class="hamburger" aria-label="Menu" aria-expanded="false">☰</button>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="directory.html" class="active">Directory</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="view-controls desktop-only">
+            <button id="gridBtn" class="view-btn active" aria-label="Grid View">
+                Grid View
+            </button>
+            <button id="listBtn" class="view-btn" aria-label="List View">
+                List View
+            </button>
+        </div>
+        <div class="directory" id="directory"></div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: info@directory.com</p>
+                <p>Phone: (555) 123-4567</p>
+            </div>
+            <div class="footer-section">
+                <p>&copy; <span id="year"></span> Business Directory</p>
+                <p>Your Name | WDD 231</p>
+                <p>Last Modified: <span id="lastModified"></span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/directory.js"></script>
+</body>
+</html>

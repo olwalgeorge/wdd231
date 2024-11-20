@@ -1,0 +1,65 @@
+[
+    {
+        "name": "Kisumu Concrete Products Limited",
+        "address": "P.O. Box 171-40100 Kisumu, Kenya",
+        "phone": "+254 57 2020211",
+        "website": "http://www.kcpl.co.ke",
+        "image": "kcpl.png",
+        "membershipLevel": 3,
+        "description": "Manufacturer of building materials"
+    },
+    {
+        "name": "Lake Basin Development Authority (LBDA)",
+        "address": "P.O. Box 2271-40100 Kisumu, Kenya",
+        "phone": "+254 57 2020303",
+        "website": "http://www.lbdake.org",
+        "image": "lbda.png",
+        "membershipLevel": 2,
+        "description": "Regional development authority"
+    },
+    {
+        "name": "Kisumu Water and Sewerage Company Limited",
+        "address": "P.O. Box 671-40100 Kisumu, Kenya",
+        "phone": "+254 57 2020404",
+        "website": "http://www.kisumuwasco.co.ke",
+        "image": "kisumuwasco.png",
+        "membershipLevel": 1,
+        "description": "Provider of water and sewerage services"
+    },
+    {
+        "name": "Kisumu County Government",
+        "address": "P.O. Box 824-40100 Kisumu, Kenya",
+        "phone": "+254 57 2020505",
+        "website": "http://www.kisumu.go.ke",
+        "image": "kisumu-county.png",
+        "membershipLevel": 3,
+        "description": "County government"
+    },
+    {
+        "name": "KCB Bank",
+        "address": "P.O. Box 486-40100 Kisumu, Kenya",
+        "phone": "+254 57 2020606",
+        "website": "http://www.kcbbankgroup.com",
+        "image": "kcb.png",
+        "membershipLevel": 2,
+        "description": "Banking services"
+    },
+    {
+        "name": "Safaricom Limited",
+        "address": "P.O. Box 668-40100 Kisumu, Kenya",
+        "phone": "+254 722 002100",
+        "website": "http://www.safaricom.co.ke",
+        "image": "safaricom.png",
+        "membershipLevel": 3,
+        "description": "Telecommunications services"
+    },
+    {
+        "name": "Kisumu National Polytechnic",
+        "address": "P.O. Box 1590-40100 Kisumu, Kenya",
+        "phone": "+254 57 2020707",
+        "website": "http://www.knpoly.ac.ke",
+        "image": "kn_poly.png",
+        "membershipLevel": 1,
+        "description": "Education and training"
+    }
+]
