@@ -4,7 +4,7 @@
         "address": "P.O. Box 171-40100 Kisumu, Kenya",
         "phone": "+254 57 2020211",
         "website": "http://www.kcpl.co.ke",
-        "image": "kcpl.png",
+        "image": "../images/kisumu-concrete.webp",
         "membershipLevel": 3,
         "description": "Manufacturer of building materials"
     },
