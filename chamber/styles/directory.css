@@ -16,18 +16,18 @@
   }
   
   [data-theme='dark'] {
-    --primary-color: #0077cc;
-    --secondary-color: #b0b0b0;
+    --primary-color: #003366;
+    --secondary-color: #cccccc;
     --background-color: #121212;
     --card-background: #1e1e1e;
-    --text-color: #e0e0e0;
+    --text-color: #ffffff;
     --shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
     --stripe-color: #2a2a2a;
-    --link-color: #4d9fff;
+    --link-color: #66b3ff;
     --button-text: #ffffff;
-    --button-hover: #0056b3;
-    --badge-background: rgba(77, 159, 255, 0.2);
-    --badge-text: #4d9fff;
+    --button-hover: #0077e6;
+    --badge-background: rgba(26, 144, 255, 0.2);
+    --badge-text: #66b3ff;
   }
   
   * {
@@ -36,14 +36,7 @@
     box-sizing: border-box;
   }
 
-  @font-face {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: url(https://fonts.gstatic.com/s/roboto/v27/KFOmCnqEu92Fr1Mu4mxK.woff2) format('woff2');
-  }
-    
+     
   body {
     font-family: 'Roboto', sans-serif;
     background-color: var(--background-color);
@@ -342,12 +335,9 @@
     padding: 1rem;
     margin-top: 1rem;
     min-height: 100px; 
-    content-visibility: auto;
-    contain-intrinsic-size: 0 200px;
+       
   }
-   
-  
-  
+     
   .footer-content {
     max-width: 1200px;
     margin: 0 auto;
@@ -391,24 +381,23 @@
     }
   
     nav ul {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      right: 0;
-      background-color: var(--primary-color);
-      flex-direction: column;
-      padding: 1rem;
-      transition: max-height 0.3s ease-out;
-      max-height: 0;
-      overflow: hidden;
-    }
-  
-    nav ul.show {
-      display: flex;
-      max-height: 300px;
-    }
-  
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--primary-color);
+        flex-direction: column;
+        padding: 1rem;
+        transition: max-height 0.3s ease-out;
+        max-height: 0;
+        overflow: hidden;
+      }
+    
+      nav ul.show {
+        display: flex;
+        max-height: 300px;
+      }
     .view-controls {
       text-align: center;
       margin-bottom: 1rem;
