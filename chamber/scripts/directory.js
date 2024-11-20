@@ -1,19 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // DOM Elements
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('nav ul');
     const gridBtn = document.getElementById('gridBtn');
     const listBtn = document.getElementById('listBtn');
     const directory = document.getElementById('directory');
+    const themeToggleBtn = document.getElementById('themeToggle');
 
-    // Toggle mobile menu
     hamburger.addEventListener('click', () => {
         hamburger.setAttribute('aria-expanded', 
             hamburger.getAttribute('aria-expanded') === 'false' ? 'true' : 'false');
         navMenu.classList.toggle('show');
     });
 
-    // View toggle handlers
     gridBtn?.addEventListener('click', () => {
         directory.classList.remove('list-view');
         gridBtn.classList.add('active');
@@ -28,13 +26,11 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('viewPreference', 'list');
     });
 
-    // Load saved view preference
     const savedView = localStorage.getItem('viewPreference');
     if (savedView === 'list') {
         listBtn?.click();
     }
 
-    // Fetch members data from JSON file
     async function getMembers() {
         try {
             const response = await fetch('data/members.json');
@@ -49,11 +45,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Display members
     function displayMembers(members) {
         directory.innerHTML = members.map(member => `
             <div class="business-card membership-${member.membershipLevel}">
-                <img src="images/${member.image}" alt="${member.name} logo">
+                <img src="images/${member.image}" alt="${member.name} logo" loading="lazy" width="200" height="120">
                 <div class="business-info">
                     <h2>${member.name}</h2>
                     <p class="address">${member.address}</p>
@@ -64,9 +59,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             </div>
         `).join('');
+        lazyLoadImages();
     }
 
-    // Get membership level badge
     function getMembershipBadge(level) {
         switch(level) {
             case 3:
@@ -80,7 +75,25 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Close mobile menu when clicking outside
+    function lazyLoadImages() {
+        const images = document.querySelectorAll('.business-card img');
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src;
+                    observer.unobserve(img);
+                }
+            });
+        });
+
+        images.forEach(img => {
+            img.dataset.src = img.src;
+            img.src = 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';
+            observer.observe(img);
+        });
+    }
+
     document.addEventListener('click', (e) => {
         if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
             navMenu.classList.remove('show');
@@ -88,25 +101,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Initialize directory
     getMembers();
-});
 
-// Set current year
-document.getElementById('year').textContent = new Date().getFullYear();
-
-// Set last modified date
-const lastModified = new Date(document.lastModified);
-document.getElementById('lastModified').textContent = lastModified.toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric'
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-    const themeToggleBtn = document.getElementById('themeToggle');
     const currentTheme = localStorage.getItem('theme') || 'light';
-
     document.documentElement.setAttribute('data-theme', currentTheme);
 
     themeToggleBtn.addEventListener('click', () => {
@@ -116,4 +113,13 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('theme', theme);
         themeToggleBtn.textContent = theme === 'dark' ? '☀️' : '🌙';
     });
+});
+
+document.getElementById('year').textContent = new Date().getFullYear();
+
+const lastModified = new Date(document.lastModified);
+document.getElementById('lastModified').textContent = lastModified.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
 });
