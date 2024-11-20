@@ -199,9 +199,15 @@ footer {
         display: flex;
     }
 
-    /* Hide view controls on mobile */
-    .desktop-only {
-        display: none;
+    /* View controls on mobile */
+    .view-controls {
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    .view-btn {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.9rem;
     }
 
     /* Force single column layout on mobile */

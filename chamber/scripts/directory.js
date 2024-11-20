@@ -14,28 +14,25 @@ document.addEventListener('DOMContentLoaded', () => {
         navMenu.classList.toggle('show');
     });
 
-    // Only initialize view controls if window width is > 768px
-    if (window.innerWidth > 768) {
-        // View toggle handlers
-        gridBtn?.addEventListener('click', () => {
-            directory.classList.remove('list-view');
-            gridBtn.classList.add('active');
-            listBtn.classList.remove('active');
-            localStorage.setItem('viewPreference', 'grid');
-        });
+    // View toggle handlers
+    gridBtn?.addEventListener('click', () => {
+        directory.classList.remove('list-view');
+        gridBtn.classList.add('active');
+        listBtn.classList.remove('active');
+        localStorage.setItem('viewPreference', 'grid');
+    });
 
-        listBtn?.addEventListener('click', () => {
-            directory.classList.add('list-view');
-            listBtn.classList.add('active');
-            gridBtn.classList.remove('active');
-            localStorage.setItem('viewPreference', 'list');
-        });
+    listBtn?.addEventListener('click', () => {
+        directory.classList.add('list-view');
+        listBtn.classList.add('active');
+        gridBtn.classList.remove('active');
+        localStorage.setItem('viewPreference', 'list');
+    });
 
-        // Load saved view preference
-        const savedView = localStorage.getItem('viewPreference');
-        if (savedView === 'list') {
-            listBtn?.click();
-        }
+    // Load saved view preference
+    const savedView = localStorage.getItem('viewPreference');
+    if (savedView === 'list') {
+        listBtn?.click();
     }
 
     // Fetch members data from JSON file
