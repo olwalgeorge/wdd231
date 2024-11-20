@@ -35,6 +35,14 @@
     padding: 0;
     box-sizing: border-box;
   }
+
+  @font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/roboto/v27/KFOmCnqEu92Fr1Mu4mxK.woff2) format('woff2');
+  }
     
   body {
     font-family: 'Roboto', sans-serif;
@@ -64,6 +72,7 @@
     display: flex;
     align-items: center;
     gap: 1rem;
+    
   }
   
   .logo {
@@ -330,12 +339,14 @@
   footer {
     background-color: var(--primary-color);
     color: var(--button-text);
-    padding: 2rem;
-    margin-top: 4rem;
-    min-height: 100px;
-   
+    padding: 1rem;
+    margin-top: 1rem;
+    min-height: 100px; 
+    content-visibility: auto;
+    contain-intrinsic-size: 0 200px;
   }
-
+   
+  
   
   .footer-content {
     max-width: 1200px;
