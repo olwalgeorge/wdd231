@@ -175,6 +175,7 @@
     border: 2px solid var(--primary-color);
     content-visibility: auto;
     contain-intrinsic-size: 0 500px;
+    text-align: center;
   }
   
   .business-card::before {
@@ -285,6 +286,7 @@
     align-items: center;
     border-left: 4px solid var(--primary-color);
     transition: var(--transition);
+    text-align: left;
   }
   
   .directory.list-view .business-card:hover {
