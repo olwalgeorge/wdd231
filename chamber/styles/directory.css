@@ -52,14 +52,15 @@ header {
 }
 
 h1 {
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     margin: 0;
-    line-height: 1; /* Add this to remove extra space */
+    line-height: 1; 
 }
 
 h1 span {
     display: block;
-    font-size: 0.8em; /* Adjust size relative to parent */
+    font-size: 0.85rem;
+    font-weight: 400; 
 }
 
 .hamburger {
@@ -323,17 +324,7 @@ footer {
 
     .logo {
         width: 40px;
-    }
-
-    h1 {
-        font-size: 1rem;
-        margin: 0;
-    }
-
-    h1 span {
-        font-size: 0.8em;
-        display: block;
-    }
+    }   
 
     .hamburger {
         display: block;
