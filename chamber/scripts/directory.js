@@ -91,3 +91,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize directory
     getMembers();
 });
+
+// Set current year
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// Set last modified date
+const lastModified = new Date(document.lastModified);
+document.getElementById('lastModified').textContent = lastModified.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+});
