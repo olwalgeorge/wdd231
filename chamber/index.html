@@ -7,10 +7,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles/directory.css">
+    <!-- <link rel="stylesheet" href="styles/directory.css"> -->
     <link rel="stylesheet" href="styles/styles.css">
     <script src="scripts/directory.js" defer></script>
     <script src="scripts/script.js" defer></script>
+    <script src="scripts/chamber.js" defer></script>
 </head>
 <body>
     <header>
@@ -56,25 +57,23 @@
             <section class="current-weather">
                 <h2>Current Weather</h2>
                 <div class="weather-content">
-                    <img src="images/weather-icon.svg" alt="Weather Icon" class="weather-icon">
-                    <p class="temperature">75° F</p>
-                    <p class="condition">Party Cloudy</p>
+                    <img id="weather-icon" src="" alt="Weather Icon" class="weather-icon">
+                    <p id="temperature" class="temperature"></p>
+                    <p id="condition" class="condition"></p>
                     <div class="weather-details">
-                        <p>High: 85°</p>
-                        <p>Low: 52°</p>
-                        <p>Humidity: 34%</p>
-                        <p>Sunrise: 7:30am</p>
-                        <p>Sunset: 9:59pm</p>
+                        <p id="high-low"></p>
+                        <p id="humidity"></p>
+                        <p id="wind-speed"></p>
+                        <p id="sunrise"></p>
+                        <p id="sunset"></p>
                     </div>
                 </div>
             </section>
     
             <section class="weather-forecast">
                 <h2>Weather Forecast</h2>
-                <div class="forecast-content">
-                    <p>Today: <span>90°F</span></p>
-                    <p>Wednesday: <span>89°F</span></p>
-                    <p>Thursday: <span>68°F</span></p>
+                <div id="forecast-content" class="forecast-content">
+                    <!-- Forecast data will be inserted here by JavaScript -->
                 </div>
             </section>
         </div>
