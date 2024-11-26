@@ -1,66 +1,87 @@
 @import url('../styles/directory.css');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
-:root {
-  --weather-background-color: rgba(200, 200, 200, 0.1);
+
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: var(--transition);
 }
 
 main {
-    display: grid;
-    gap: 1rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
+  display: grid;
+  gap: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
 .hero {
-    position: relative;
-    width: 100%;
-    height: 400px;
-    margin-bottom: 2rem;
+  position: relative;
+  width: 100%;
+  height: 400px;
+  margin-bottom: 2rem;
+  overflow: hidden;
+  border-radius: var(--card-radius);
 }
 
 .hero img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.hero:hover img {
+  transform: scale(1.05);
 }
 
 .keynote-button {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    background: var(--primary-color);
-    color: var(--button-text);
-    padding: 0.5rem 1rem;
-    text-decoration: none;
-    border-radius: var(--card-radius);
-    transition: var(--transition);
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: var(--primary-color);
+  color: var(--button-text);
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  border-radius: var(--card-radius);
+  transition: var(--transition);
 }
 
 .keynote-button:hover {
-    background: var(--button-hover);
+  background: var(--button-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .info-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: 1rem;
-    margin-bottom: 2rem;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 2rem;
 }
 
 .events, .current-weather, .weather-forecast {
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(15px);
-    border-radius: var(--card-radius);
-    overflow: hidden;
-    box-shadow: var(--shadow);
+  background: var(--card-background);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--card-border);
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.events:hover, .current-weather:hover, .weather-forecast:hover {
+  transform: translateY(-5px);
 }
 
 h2 {
-    background: var(--primary-color);
-    color: var(--button-text);
-    margin: 0;
-    padding: 0.5rem 1rem;
+  background: var(--primary-color);
+  color: var(--button-text);
+  margin: 0;
+  padding: 0.5rem 1rem;
 }
 
 .weather-content {
@@ -92,6 +113,7 @@ h2 {
 .weather-details p {
   margin: 0.25rem 0;
 }
+
 .forecast-day {
   padding: 0.5rem;
 }
@@ -110,7 +132,6 @@ h2 {
 .forecast-item img {
   width: 40px;
   height: 40px;
-  
 }
 
 .business-grid {
@@ -119,22 +140,33 @@ h2 {
   gap: 1rem;
   margin: 2rem 0;
   max-width: 1200px;
+  cursor: grab;
+}
+
+.business-grid:active {
+  cursor: grabbing;
 }
 
 .business-card {
-  background: #e6e6e6;
-  border-radius: 8px;
+  background: var(--card-background);
+  border-radius: var(--card-radius);
   padding: 1rem;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   height: 220px;
   width: 380px;
+  transition: var(--transition);
+}
+
+.business-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
 }
 
 .card-header {
   text-align: center;
-  border-bottom: 1px solid #999;
+  border-bottom: 1px solid var(--card-border);
   padding-bottom: 0.5rem;
   margin-bottom: 0.5rem;
   height: 60px;
@@ -143,7 +175,7 @@ h2 {
 .business-card h3 {
   margin: 0;
   font-size: 1.1rem;
-  color: #333;
+  color: var(--text-color);
   line-height: 1.2;
   max-height: 2.4rem;
   overflow: hidden;
@@ -152,7 +184,8 @@ h2 {
 .tagline {
   margin: 0;
   font-size: 0.9rem;
-  color: #666;
+  color: var(--text-color);
+  opacity: 0.7;
   line-height: 1.2;
   height: 1.2rem;
   overflow: hidden;
@@ -162,62 +195,84 @@ h2 {
 
 .card-content {
   display: grid;
-  grid-template-columns: 150px 1fr;
-  gap: 1rem;
-  align-items: start;
-  height: 150px;
+  
+grid-template-columns: auto auto;
+gap: .5rem;
+align-items: start;
+height: auto;
 }
-
 .business-image {
-  width: 120px;
-  height: 120px;
-  background: #ccc;
-  border: 1px solid #999;
-  object-fit: cover;
+  
+width: 100px;
+height: auto;
+background: var(--card-background);
+border: 1px solid var(--card-border);
+object-fit: cover; 
+border-radius:50%; 
 }
 
 .contact-info {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-  width: calc(380px - 120px - 2rem - 1rem);
+display:flex; 
+flex-direction:column; 
+gap:.25rem; 
+width:auto; 
 }
+
 .contact-info p {
-  margin: 0;
-  font-size: 0.7rem;
-  display: flex;
-  gap: 0.5rem;
-  align-items: center;
-  height: 1.2rem; /* Fixed height for each line */
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+margin:0; 
+font-size:.7rem; 
+display:flex; 
+gap:.5rem; 
+align-items:center; 
+height:auto; 
+overflow:hidden; 
+text-overflow:ellipsis; 
+white-space:no-wrap; 
 }
 
 .contact-info span {
-  font-weight: bold;
-  color: #333;
-  min-width: 60px; /* Fixed width for labels */
+font-weight:bold; 
+color:variables(--text-color); 
+min-width:auto; 
 }
+
 @media (max-width: 1024px) {
   .business-grid {
-      grid-template-columns: repeat(2, 320px);
-      justify-content: center;
+    grid-template-columns: repeat(2, 320px);
+    justify-content: center;
   }
 }
 
 @media (max-width: 768px) {   
-    .info-grid {
-        grid-template-columns: 1fr;
-    }
-
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
    
-    .business-grid {
-      grid-template-columns: 320px;
+  .business-grid {
+    grid-template-columns: 320px;
   }
 
-    .hero {
-        height: 200px;
-    }
+  .hero {
+    height: 30vh;
+  }
+}
+
+/* Accessibility Improvements */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* Animations */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
