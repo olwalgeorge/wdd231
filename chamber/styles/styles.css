@@ -1,6 +1,14 @@
 @import url('../styles/directory.css');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
+:root {
+  --weather-background-color: #39c5ff;
+}
+
+[data-theme='dark'] {
+  --weather-background-color: #03597d;
+}
+
 body {
   font-family: 'Montserrat', sans-serif;
   background-color: var(--background-color);
@@ -76,6 +84,10 @@ img {
   overflow: hidden;
   box-shadow: var(--shadow);
   transition: var(--transition);
+}
+
+.weather-forecast, .current-weather {
+  background: var(--weather-background-color);
 }
 
 .events:hover, .current-weather:hover, .weather-forecast:hover {
