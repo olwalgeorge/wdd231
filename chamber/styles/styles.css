@@ -82,16 +82,24 @@ h2 {
     margin-top: 1rem;
     color: var(--text-color);
 }
-
-.forecast-content {
-    padding: 1rem;
-    color: var(--text-color);
+.forecast-day {
+  padding: 0.5rem;
 }
 
-.forecast-content p {
-    display: flex;
-    justify-content: space-between;
-    margin: 0.5rem 0;
+.forecast-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.forecast-item span {
+  min-width: 60px;
+}
+
+.forecast-item img {
+  width: 40px;
+  height: 40px;
 }
 
 .business-grid {

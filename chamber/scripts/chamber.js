@@ -64,12 +64,14 @@ function updateForecast(data) {
         const icon = day.weather[0].icon;
 
         const dayElement = document.createElement('div');
-        dayElement.classList.add('forecast-day');
-        dayElement.innerHTML = `
-            <p>${dayName}</p>
+    dayElement.classList.add('forecast-day');
+    dayElement.innerHTML = `
+        <div class="forecast-item">
+            <span>${dayName}</span>
             <img src="https://openweathermap.org/img/wn/${icon}.png" alt="Weather icon">
-            <p>${temp}°C</p>
-        `;
-        forecastContent.appendChild(dayElement);
+            <span>${temp}°C</span>
+        </div>
+    `;
+    forecastContent.appendChild(dayElement);
     });
 }
