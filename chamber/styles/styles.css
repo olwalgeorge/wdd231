@@ -61,26 +61,33 @@ h2 {
 }
 
 .weather-content {
-    padding: 1rem;
-    text-align: center;
-    color: var(--text-color);
+  display: flex;
+  padding: 1rem;
+  color: var(--text-color);
 }
 
 .weather-icon {
-    width: 64px;
-    height: 64px;
+  width: 64px;
+  height: 64px;
+  margin-right: 1rem;
+}
+
+.weather-info {
+  flex: 1;
 }
 
 .temperature {
-    font-size: 1.5rem;
-    margin: 0.5rem 0;
-    color: var(--text-color);
+  font-size: 1.5rem;
+  margin: 0;
+  margin-bottom: 0.5rem;
 }
 
 .weather-details {
-    text-align: left;
-    margin-top: 1rem;
-    color: var(--text-color);
+  text-align: left;
+}
+
+.weather-details p {
+  margin: 0.25rem 0;
 }
 .forecast-day {
   padding: 0.5rem;
