@@ -355,6 +355,18 @@
     gap: 2rem;
   }
   
+  .footer-content .social-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0;
+  }
+  .footer-content .social-links img {
+    width: 3rem;
+    height: 3rem;
+    margin: 0 0.5rem;
+  }
+  
   @media screen and (max-width: 768px) {
     .nav-wrapper {
       display: flex;
@@ -443,4 +455,14 @@
     .directory.list-view .business-card p {
       font-size: 0.85rem;
     }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+      }
+      
+      .footer-info, .footer-credits, .social-links{
+        text-align: center;
+        justify-content: center;
+      }
   }

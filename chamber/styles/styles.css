@@ -1,211 +1,138 @@
-/* General Styles */
-body {
-    font-family: 'Montserrat', sans-serif;    
-    padding: 0;
-    box-sizing: border-box;
-    max-width: 80vw;
-    margin: 0 auto;
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #f0f0f0;
-    padding: 0 20px;
-    
-}
-.logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-}
-
-.logo img {
-    width: 70px;
-    margin-right: 1rem;
-}
-
-.logo h1 {
-    font-size: 3rem;
-    font-weight: 700;
-}
-
-.logo span {
-    display: block;    
-    font-size: 1rem;  
-   
-}
-
-nav {
-    display: flex;
-    gap: 15px;
-}
-
-nav a {
-    text-decoration: none;
-    color: #333;
-}
-
-.hamburger {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 24px;
-}
-
-/* Hero Section */
 .hero {
-    position: relative;
+  position: relative;
+  width: 100%;
+  height: 400px;
+  margin-bottom: 2rem;
 }
 
 .hero img {
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.hero button {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    padding: 10px 20px;
+.keynote-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(128, 128, 128, 0.8);
+  color: white;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  border-radius: 4px;
 }
 
-/* Main Content */
-
-
-
-.content {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: 20px;    
-    border: #ccc solid 1px;
+.info-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 2rem;
 }
 
-.events, .weather, .forecast {
-    border: #ccc solid 1px;
-    
-}
-.events h3, .weather h3, .forecast h3 {
-    text-align: center;
-    background-color: #f0f0f0;
-    margin-top: 0;
-    padding: 10px 0;
+.events, .current-weather, .weather-forecast {
+  background: #e0e0e0;
+  border-radius: 4px;
+  overflow: hidden;
 }
 
-.business-directory {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    border: #ccc solid 1px;
-    
+h2 {
+  background: #333;
+  color: white;
+  margin: 0;
+  padding: 0.5rem 1rem;
 }
-/* Business Card Styles */
+
+.weather-content {
+  padding: 1rem;
+  text-align: center;
+}
+
+.weather-icon {
+  width: 64px;
+  height: 64px;
+}
+
+.temperature {
+  font-size: 1.5rem;
+  margin: 0.5rem 0;
+}
+
+.weather-details {
+  text-align: left;
+  margin-top: 1rem;
+}
+
+.forecast-content {
+  padding: 1rem;
+}
+
+.forecast-content p {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5rem 0;
+}
+
+.business-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
 .business-card {
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    
-    text-align: center;
-    width: 300px; /* Set a fixed width for larger screens */
-    
+  background: #e0e0e0;
+  border-radius: 4px;
+  padding: 1rem;
 }
 
-.business-header h4 {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 0;
-}
-.business-header p {
-
-    font-size: 14px;
-    color: #666;
-    margin-top: 0;
+.business-card h3 {
+  margin: 0;
+  text-align: center;
 }
 
-
-.business-info img {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 50%;
-    margin-bottom: 15px;
+.tagline {
+  text-align: center;
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
 }
 
-.business-info p {
-    
-    font-size: 14px;
-    text-align: left;
+.business-content {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
 }
 
-.business-info p br {
-    display: none; /* Hide line breaks on larger screens */
+.business-image {
+  width: 100px;
+  height: 100px;
+  background: #999;
 }
 
-.business-info {
-    display: flex;
-    
+.contact-info p {
+  margin: 0.25rem 0;
+  font-size: 0.9rem;
 }
 
-.business-info p {
-    margin-top: 0;
+.contact-info span {
+  font-weight: bold;
 }
 
-
-
-/* Footer */
-footer {
-    background-color: #f0f0f0;
-    text-align: center;
-    padding: 20px 0;
-}
-
-.social-media a img {
-    width: 30px;
-}
-
-/* Responsive Styles */
 @media (max-width: 768px) {
+  .info-grid {
+      grid-template-columns: 1fr;
+  }
 
-    nav {
-        display: none; /* Hide navigation by default on mobile */
-        flex-direction: column; /* Stack links vertically */
-        position: absolute; 
-        top: 60px; 
-        right: 0; 
-        background-color: #f0f0f0; 
-        width: 100%;
-        text-align: center; 
-        padding-top: 10px; 
-        border-top: solid 1px #ccc; /* Separate from header */
-        z-index: 1000; /* Ensure it appears above other content */
-        transition: transform .3s ease-in-out; /* Smooth open/close */
-        transform-origin:right top; /* Pivot from top-right corner */
-        transform :scaleY(0); /* Initially hidden */
-        visibility:hidden; /* Hide visually */
-        
-      }
-      
-      nav.open{
-        transform :scaleY(1); /* Show when open */
-        visibility :visible;
+  .business-grid {
+      grid-template-columns: 1fr;
+  }
 
-      }
-
-      .hamburger {
-          display:block; /* Show hamburger menu on mobile */
-      }
-
-      .content {
-          flex-direction :column ;/* Stack content vertically on mobile */
-          gap :20px ;
-      }
-
-      .events, .weather, .forecast{
-          width :100%;/* Take full width on mobile*/
-      }
-
-     .business-directory{
-         flex-direction :column ;/* Stack business cards on mobile*/
-     }
+  .hero {
+      height: 200px;
+  }
 }
