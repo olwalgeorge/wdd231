@@ -75,3 +75,72 @@ function updateForecast(data) {
     forecastContent.appendChild(dayElement);
     });
 }
+
+// load business card
+
+async function loadMembers() {
+    try {
+        const response = await fetch('data/members.json');
+        const members = await response.json();
+        displaySpotlights(members);
+    } catch (error) {
+        console.error('Error loading member data:', error);
+        document.getElementById('spotlightSection').innerHTML = 'Failed to load member data';
+    }
+}
+
+function displaySpotlights(members) {
+    const spotlightSection = document.getElementById('spotlightSection');
+    spotlightSection.innerHTML = ''; // Clear existing content
+
+    // Filter for gold (level 3) and silver (level 2) members
+    const eligibleMembers = members.filter(member => 
+        member.membershipLevel === 2 || member.membershipLevel === 3
+    );
+
+    // Randomly select 3 members
+    const selectedMembers = shuffleArray(eligibleMembers).slice(0, 3);
+
+    // Create and append cards for selected members
+    selectedMembers.forEach(member => {
+        const card = createMemberCard(member);
+        spotlightSection.appendChild(card);
+    });
+}
+
+function createMemberCard(member) {
+    const card = document.createElement('div');
+    card.className = 'business-card';
+
+    // Convert membership level number to text
+    const membershipText = member.membershipLevel === 3 ? 'Gold Member' : 'Silver Member';
+
+    card.innerHTML = `
+        <div class="card-header">
+            <h3>${member.name}</h3>
+            <p class="tagline">${member.description}</p>
+        </div>
+        <div class="card-content">
+            <img src="${member.image.replace('../', '')}" alt="${member.name}" class="business-image">
+            <div class="contact-info">
+                <p><span>EMAIL:</span> ${member.website.replace('https://', '')}</p>
+                <p><span>PHONE:</span> ${member.phone}</p>
+                <p><span>URL:</span> ${member.website.replace('https://', '')}</p>
+            </div>
+        </div>
+    `;
+    
+    return card;
+}
+
+function shuffleArray(array) {
+    const newArray = [...array];
+    for (let i = newArray.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+    }
+    return newArray;
+}
+
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', loadMembers);

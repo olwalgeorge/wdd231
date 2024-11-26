@@ -108,73 +108,112 @@ h2 {
 .forecast-item img {
   width: 40px;
   height: 40px;
+  
 }
 
 .business-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-    margin: 2rem 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(320px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+  max-width: 1200px;
 }
 
 .business-card {
-    background: var(--card-background);
-    border-radius: var(--card-radius);
-    padding: 1rem;
-    box-shadow: var(--shadow);
-    transition: var(--transition);
+  background: #e6e6e6;
+  border-radius: 8px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  height: 220px; /* Fixed height */
+  width: 380px; /* Fixed width */
 }
 
-.business-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+.card-header {
+  text-align: center;
+  border-bottom: 1px solid #999;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
+  height: 60px; /* Fixed height for title area */
 }
 
 .business-card h3 {
-    margin: 0;
-    text-align: center;
-    color: var(--text-color);
+  margin: 0;
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.2;
+  max-height: 2.4rem; /* 2 lines maximum */
+  overflow: hidden;
 }
 
 .tagline {
-    text-align: center;
-    margin: 0.5rem 0;
-    font-size: 0.9rem;
-    color: var(--secondary-color);
+  margin: 0;
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.2;
+  height: 1.2rem; /* Single line */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
-.business-content {
-    display: flex;
-    gap: 1rem;
-    margin-top: 1rem;
+.card-content {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 1rem;
+  align-items: start;
+  height: 150px; /* Fixed height */
 }
 
 .business-image {
-    width: 100px;
-    height: 100px;
-    background: var(--secondary-color);
-    border-radius: var(--card-radius);
+  width: 150px;
+  height: 150px;
+  background: #ccc;
+  border: 1px solid #999;
+  object-fit: cover;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  width: calc(380px - 150px - 2rem - 1rem); /* Card width - image - padding - gap */
 }
 
 .contact-info p {
-    margin: 0.25rem 0;
-    font-size: 0.9rem;
-    color: var(--text-color);
+  margin: 0;
+  font-size: 0.85rem;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  height: 1.2rem; /* Fixed height for each line */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .contact-info span {
-    font-weight: bold;
-    color: var(--primary-color);
+  font-weight: bold;
+  color: #333;
+  min-width: 60px; /* Fixed width for labels */
+}
+@media (max-width: 1024px) {
+  .business-grid {
+      grid-template-columns: repeat(2, 320px);
+      justify-content: center;
+  }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px) {   
     .info-grid {
         grid-template-columns: 1fr;
     }
 
+   
     .business-grid {
-        grid-template-columns: 1fr;
-    }
+      grid-template-columns: 320px;
+  }
 
     .hero {
         height: 200px;
