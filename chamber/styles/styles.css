@@ -1,7 +1,7 @@
 @import url('../styles/directory.css');
 
 :root {
-  --weather-background-color: rgba(0, 0, 255, 0.05);
+  --weather-background-color: rgba(200, 200, 200, 0.1);
 }
 
 main {
@@ -47,7 +47,8 @@ main {
 }
 
 .events, .current-weather, .weather-forecast {
-    background: var(--weather-background-color);
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
     border-radius: var(--card-radius);
     overflow: hidden;
     box-shadow: var(--shadow);
