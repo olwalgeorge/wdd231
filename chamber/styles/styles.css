@@ -1,13 +1,12 @@
 @import url('../styles/directory.css');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
-
-
 body {
   font-family: 'Montserrat', sans-serif;
   background-color: var(--background-color);
   color: var(--text-color);
   transition: var(--transition);
+  font-size: 16px;
 }
 
 main {
@@ -16,6 +15,11 @@ main {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 .hero {
@@ -48,6 +52,7 @@ main {
   text-decoration: none;
   border-radius: var(--card-radius);
   transition: var(--transition);
+  font-size: 1rem;
 }
 
 .keynote-button:hover {
@@ -82,6 +87,7 @@ h2 {
   color: var(--button-text);
   margin: 0;
   padding: 0.5rem 1rem;
+  font-size: 1.2rem;
 }
 
 .weather-content {
@@ -112,6 +118,7 @@ h2 {
 
 .weather-details p {
   margin: 0.25rem 0;
+  font-size: 0.9rem;
 }
 
 .forecast-day {
@@ -127,6 +134,7 @@ h2 {
 
 .forecast-item span {
   min-width: 60px;
+  font-size: 0.9rem;
 }
 
 .forecast-item img {
@@ -195,66 +203,44 @@ h2 {
 
 .card-content {
   display: grid;
-  
-grid-template-columns: auto auto;
-gap: .5rem;
-align-items: start;
-height: auto;
+  grid-template-columns: auto auto;
+  gap: .5rem;
+  align-items: start;
+  height: auto;
 }
+
 .business-image {
-  
-width: 100px;
-height: auto;
-background: var(--card-background);
-border: 1px solid var(--card-border);
-object-fit: cover; 
-border-radius:50%; 
+  width: 100px;
+  height: auto;
+  background: var(--card-background);
+  border: 1px solid var(--card-border);
+  object-fit: cover; 
+  border-radius: 50%; 
 }
 
 .contact-info {
-display:flex; 
-flex-direction:column; 
-gap:.25rem; 
-width:auto; 
+  display: flex; 
+  flex-direction: column; 
+  gap: .25rem; 
+  width: auto; 
 }
 
 .contact-info p {
-margin:0; 
-font-size:.7rem; 
-display:flex; 
-gap:.5rem; 
-align-items:center; 
-height:auto; 
-overflow:hidden; 
-text-overflow:ellipsis; 
-white-space:no-wrap; 
+  margin: 0; 
+  font-size: .7rem; 
+  display: flex; 
+  gap: .5rem; 
+  align-items: center; 
+  height: auto; 
+  overflow: hidden; 
+  text-overflow: ellipsis; 
+  white-space: nowrap; 
 }
 
 .contact-info span {
-font-weight:bold; 
-color:variables(--text-color); 
-min-width:auto; 
-}
-
-@media (max-width: 1024px) {
-  .business-grid {
-    grid-template-columns: repeat(2, 320px);
-    justify-content: center;
-  }
-}
-
-@media (max-width: 768px) {   
-  .info-grid {
-    grid-template-columns: 1fr;
-  }
-   
-  .business-grid {
-    grid-template-columns: 320px;
-  }
-
-  .hero {
-    height: 30vh;
-  }
+  font-weight: bold; 
+  color: var(--text-color); 
+  min-width: auto; 
 }
 
 /* Accessibility Improvements */
@@ -276,3 +262,116 @@ button:focus-visible {
   transform: translateY(0);
 }
 
+@media (max-width: 1024px) {
+  .business-grid {
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  main {
+    padding: 0 0.5rem;
+  }
+
+  .hero {
+    height: 200px;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .business-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .business-card {
+    width: 100%;
+    height: auto;
+    padding: 0.75rem;
+  }
+
+  .card-content {
+    grid-template-columns: 1fr;
+  }
+
+  .business-image {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+  }
+
+  .contact-info {
+    text-align: center;
+  }
+
+  .keynote-button {
+    padding: 0.7rem 1.2rem;
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  body {
+    font-size: 12px;
+  }
+
+  main {
+    padding: 0 0.25rem;
+  }
+
+  .hero {
+    height: 150px;
+  }
+
+  .keynote-button {
+    bottom: 10px;
+    right: 10px;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .business-card {
+    padding: 0.5rem;
+  }
+ 
+
+  h2 {
+    font-size: 1rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .weather-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .temperature {
+    font-size: 1.2rem;
+  }
+
+  .forecast-item img {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+@media (max-width: 320px) {
+  .business-grid {
+    grid-template-columns: 1fr;
+  }
+  h1 {
+    font-size: 1.5rem;
+    padding: 0.3rem 0.6rem;
+  }
+  .business-card {
+    width: 100%;
+    height: auto;
+  }
+}
