@@ -5,12 +5,14 @@
 }
 
 main {
+    display: grid;
+    gap: 1rem;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1rem;
 }
 
-.hero {  
+.hero {
     position: relative;
     width: 100%;
     height: 400px;
@@ -126,8 +128,8 @@ h2 {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  height: 220px; /* Fixed height */
-  width: 380px; /* Fixed width */
+  height: 220px;
+  width: 380px;
 }
 
 .card-header {
@@ -135,7 +137,7 @@ h2 {
   border-bottom: 1px solid #999;
   padding-bottom: 0.5rem;
   margin-bottom: 0.5rem;
-  height: 60px; /* Fixed height for title area */
+  height: 60px;
 }
 
 .business-card h3 {
@@ -143,7 +145,7 @@ h2 {
   font-size: 1.1rem;
   color: #333;
   line-height: 1.2;
-  max-height: 2.4rem; /* 2 lines maximum */
+  max-height: 2.4rem;
   overflow: hidden;
 }
 
@@ -152,7 +154,7 @@ h2 {
   font-size: 0.9rem;
   color: #666;
   line-height: 1.2;
-  height: 1.2rem; /* Single line */
+  height: 1.2rem;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -163,12 +165,12 @@ h2 {
   grid-template-columns: 150px 1fr;
   gap: 1rem;
   align-items: start;
-  height: 150px; /* Fixed height */
+  height: 150px;
 }
 
 .business-image {
-  width: 150px;
-  height: 150px;
+  width: 120px;
+  height: 120px;
   background: #ccc;
   border: 1px solid #999;
   object-fit: cover;
@@ -178,12 +180,11 @@ h2 {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
-  width: calc(380px - 150px - 2rem - 1rem); /* Card width - image - padding - gap */
+  width: calc(380px - 120px - 2rem - 1rem);
 }
-
 .contact-info p {
   margin: 0;
-  font-size: 0.85rem;
+  font-size: 0.7rem;
   display: flex;
   gap: 0.5rem;
   align-items: center;
@@ -219,3 +220,4 @@ h2 {
         height: 200px;
     }
 }
+
