@@ -113,7 +113,7 @@
   /* Theme Toggle Button */
 #themeToggle {
   background: none;
-  border: none;
+  border: 2px solid #ffcc00;
   font-size: 1.5rem;
   cursor: pointer;
   transition: var(--transition);
