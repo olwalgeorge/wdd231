@@ -1,5 +1,5 @@
 @import url('../styles/directory.css');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
 
 :root {
   --weather-background-color: #39c5ff;
@@ -204,17 +204,17 @@ h2 {
   overflow: hidden;
 }
 
-.tagline {
+/* .tagline {
   margin: 0;
   font-size: 0.9rem;
   color: var(--text-color);
-  opacity: 0.7;
-  line-height: 1.2;
+  opacity: 1;
+  line-height: 1.5;
   height: 1.2rem;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-}
+} */
 
 .card-content {
   display: grid;
