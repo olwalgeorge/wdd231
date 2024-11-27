@@ -17,7 +17,7 @@ body {
 
 main {
   display: grid;
-  gap: 0.5rem; /* Reduced from 1rem */
+  gap: 0.5rem; 
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
@@ -32,7 +32,7 @@ img {
   position: relative;
   width: 100%;
   height: 400px;
-  margin-bottom: 1rem; /* Reduced from 2rem */
+  margin-bottom: 1rem; 
   overflow: hidden;
   border-radius: var(--card-radius);
 }
@@ -71,7 +71,7 @@ img {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
   gap: 1rem;
-  margin-bottom: 1rem; /* Reduced from 2rem */
+  margin-bottom: 1rem; 
 }
 
 .events, .current-weather, .weather-forecast {
@@ -156,7 +156,7 @@ h2 {
   display: grid;
   grid-template-columns: repeat(3, minmax(320px, 1fr));
   gap: 1rem;
-  margin: 1rem 0; /* Reduced top margin from 2rem */
+  margin: 1rem 0; 
   max-width: 1200px;
   cursor: grab;
 }
