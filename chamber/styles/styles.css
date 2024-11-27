@@ -3,11 +3,11 @@
 
 :root {
   --weather-background-color: #39c5ff;
-  --button-background-color: #0056b3;
+  --button-background-color: #0b465f;
 }
 
 [data-theme='dark'] {
-  --weather-background-color: #03597d;
+  --weather-background-color: #083464;
   
 }
 
