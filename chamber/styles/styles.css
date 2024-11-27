@@ -54,7 +54,7 @@ img {
   position: absolute;
   bottom: 20px;
   right: 20px;
-  background: var(--primary-color);
+  background: var(--button-hover);
   color: var(--button-text);
   padding: 0.5rem 1rem;
   text-decoration: none;
@@ -64,7 +64,7 @@ img {
 }
 
 .keynote-button:hover {
-  background: var(--button-hover);
+  background: var(--weather-background-color);
   transform: translateY(-3px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
