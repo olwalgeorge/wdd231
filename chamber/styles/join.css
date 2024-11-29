@@ -1,10 +1,3 @@
-:root {
-    --heading-color: #190975;
-}
-
-[data=theme="dark"] {
-    --heading-color: #33CCCC;
-}
 
 
 body {
@@ -14,6 +7,7 @@ body {
     padding: 20px;
     background-color: var(--background-color);
     color: var(--text-color);
+    
 }
 
 main {
@@ -24,12 +18,6 @@ main {
     box-shadow: var(--shadow);
     border-radius: var(--card-radius);
 }
-
-/* h1 {
-    
-    text-align: left;
-    
-} */
 
 .content-wrapper {
     display: flex;
@@ -166,14 +154,14 @@ input[type="submit"]:hover {
 }
 
 .dollar-sign {
-
     position: absolute;
-    font-size: 32px;
-    transform: rotate(90deg);    
+    font-size: 32px;      
     color: var(--badge-color);
     background-color: var(--card-background);
     padding: 0 10px;
 }
+
+
 
 .membership-section {
     display: flex;
@@ -298,9 +286,24 @@ input[type="submit"]:hover {
         width: 1px;
         height: 100%;
         background: linear-gradient(to bottom, transparent, var(--secondary-color), transparent);
-    }
+    }   
+}
 
+@media (orientation: landscape) {
     .dollar-sign {
-        transform: rotate(90deg);
+        transform: rotate(0deg);
+        padding: 0 10px;
+        left: auto;
+        margin-left: 0;
     }
 }
+
+@media (orientation: portrait) {
+    .dollar-sign {
+        transform: rotate(90deg);
+        padding: 10px 0;
+        left: 50%;
+        margin-left: -16px; 
+    }
+}
+
