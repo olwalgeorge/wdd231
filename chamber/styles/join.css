@@ -1,3 +1,10 @@
+:root {
+    --heading-color: #190975;
+}
+
+[data=theme="dark"] {
+    --heading-color: #33CCCC;
+}
 
 
 body {
@@ -18,11 +25,11 @@ main {
     border-radius: var(--card-radius);
 }
 
-h1 {
-    color: var(--primary-color);
+/* h1 {
+    
     text-align: left;
-    margin-bottom: 20px;
-}
+    
+} */
 
 .content-wrapper {
     display: flex;
@@ -58,10 +65,10 @@ label span {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
-    color: var(--primary-color);
+    
 }
 
-label span::after {
+label span::after, legend::after {
     content: "*";
     color: red;
     margin-left: 4px;
@@ -109,8 +116,7 @@ fieldset {
 }
 
 legend {
-    font-weight: bold;
-    color: var(--primary-color);
+    font-weight: bold;    
     padding: 0 10px;
 }
 
@@ -164,20 +170,17 @@ input[type="submit"]:hover {
     position: absolute;
     font-size: 32px;
     transform: rotate(90deg);    
-    color: var(--primary-color);
+    color: var(--badge-color);
     background-color: var(--card-background);
     padding: 0 10px;
 }
 
 .membership-section {
     display: flex;
-    flex-direction: column;
-    
-    
+    flex-direction: column;    
 }
 
-.membership-heading {
-    color: var(--primary-color);
+.membership-heading {   
     text-align: left;
     
 }
@@ -221,8 +224,7 @@ input[type="submit"]:hover {
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-.card h3 {
-    color: var(--primary-color);
+.card h3 {    
     margin-top: 0;
 }
 
