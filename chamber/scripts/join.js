@@ -29,17 +29,28 @@ window.onclick = function(event) {
     }
 }
 
-if (formSubmitHandler) {
-    formSubmitHandler.addEventListener('submit', function(event) {
-        event.preventDefault();
-        // Assuming form validation and data collection happens here
-        const firstName = document.getElementById('first_name').value;
-        const lastName = document.getElementById('last_name').value;
-        const email = document.getElementById('email').value;
-        const mobile = document.getElementById('mobile').value;
-        const business = document.getElementById('business').value;
-        const submissionDate = new Date().toLocaleString();
-        // Store the form data and redirect
-        window.location.href = 'thankyou.html?first_name=' + encodeURIComponent(firstName) + '&last_name=' + encodeURIComponent(lastName) + '&email=' + encodeURIComponent(email) + '&mobile=' + encodeURIComponent(mobile) + '&business=' + encodeURIComponent(business) + '&submission_date=' + encodeURIComponent(submissionDate);
+
+document.addEventListener('DOMContentLoaded', function() {
+    const formData = document.getElementById('formData');
+    const urlParams = new URLSearchParams(window.location.search);
+    
+    const requiredFields = [
+        { name: 'firstName', label: 'First Name' },
+        { name: 'lastName', label: 'Last Name' },
+        { name: 'email', label: 'Email' },
+        { name: 'phone', label: 'Mobile Phone' },
+        { name: 'orgName', label: 'Business/Organization Name' },
+        { name: 'timestamp', label: 'Submission Date' }
+    ];
+
+    let html = '<ul>';
+    requiredFields.forEach(field => {
+        const value = urlParams.get(field.name);
+        if (value) {
+            html += `<li><strong>${field.label}:</strong> ${value}</li>`;
+        }
     });
-}
+    html += '</ul>';
+
+    formData.innerHTML = html;
+});
