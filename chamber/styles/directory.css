@@ -96,7 +96,7 @@
 
   .nav-controls {
     display: flex;
-    align-items: fl;
+    align-items: center;
     gap: 1rem;
   }
   
