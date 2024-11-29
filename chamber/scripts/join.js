@@ -28,3 +28,18 @@ window.onclick = function(event) {
         event.target.style.display = 'none';
     }
 }
+
+if (formSubmitHandler) {
+    formSubmitHandler.addEventListener('submit', function(event) {
+        event.preventDefault();
+        // Assuming form validation and data collection happens here
+        const firstName = document.getElementById('first_name').value;
+        const lastName = document.getElementById('last_name').value;
+        const email = document.getElementById('email').value;
+        const mobile = document.getElementById('mobile').value;
+        const business = document.getElementById('business').value;
+        const submissionDate = new Date().toLocaleString();
+        // Store the form data and redirect
+        window.location.href = 'thankyou.html?first_name=' + encodeURIComponent(firstName) + '&last_name=' + encodeURIComponent(lastName) + '&email=' + encodeURIComponent(email) + '&mobile=' + encodeURIComponent(mobile) + '&business=' + encodeURIComponent(business) + '&submission_date=' + encodeURIComponent(submissionDate);
+    });
+}
