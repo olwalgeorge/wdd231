@@ -1,5 +1,5 @@
 :root {
-    --primary-color: #02203e;
+    --primary-color: #003366;
     --secondary-color: #555555;
     --background-color: #f5f5f5;
     --card-background: #ffffff;
@@ -15,8 +15,7 @@
     --badge-text: #003366;
   }
   
-  [data-theme='dark'] {
-    --primary-color: #003366;
+  [data-theme='dark'] {    
     --secondary-color: #cccccc;
     --background-color: #121212;
     --card-background: #1e1e1e;
