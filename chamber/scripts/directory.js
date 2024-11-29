@@ -6,12 +6,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const directory = document.getElementById('directory');
     const themeToggleBtn = document.getElementById('themeToggle');
 
+    // Hamburger menu toggle
     hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('open');
+        hamburger.textContent = hamburger.classList.contains('open') ? '✕' : '☰';
         hamburger.setAttribute('aria-expanded', 
             hamburger.getAttribute('aria-expanded') === 'false' ? 'true' : 'false');
-        navMenu.classList.toggle('show');
+        
+        if (navMenu.classList.contains('show')) {
+            navMenu.classList.remove('show');
+            navMenu.classList.add('hide');
+        } else {
+            navMenu.classList.remove('hide');
+            navMenu.classList.add('show');
+        }
     });
 
+    // Grid and List view buttons
     gridBtn?.addEventListener('click', () => {
         directory.classList.remove('list-view');
         gridBtn.classList.add('active');
@@ -26,11 +37,13 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('viewPreference', 'list');
     });
 
+    // Load saved view preference
     const savedView = localStorage.getItem('viewPreference');
     if (savedView === 'list') {
         listBtn?.click();
     }
 
+    // Fetch and display members
     async function getMembers() {
         try {
             const response = await fetch('data/members.json');
@@ -94,15 +107,18 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Close menu when clicking outside
     document.addEventListener('click', (e) => {
         if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
             navMenu.classList.remove('show');
+            navMenu.classList.add('hide');
+            hamburger.classList.remove('open');
+            hamburger.textContent = '☰';
             hamburger.setAttribute('aria-expanded', 'false');
         }
     });
 
-    getMembers();
-
+    // Theme toggle
     const currentTheme = localStorage.getItem('theme') || 'light';
     document.documentElement.setAttribute('data-theme', currentTheme);
 
@@ -113,8 +129,11 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('theme', theme);
         themeToggleBtn.textContent = theme === 'dark' ? '☀️' : '🌙';
     });
+
+    getMembers();
 });
 
+// Update copyright year and last modified date
 document.getElementById('year').textContent = new Date().getFullYear();
 
 const lastModified = new Date(document.lastModified);

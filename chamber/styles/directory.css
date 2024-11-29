@@ -68,20 +68,20 @@
   }
   
   .logo {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     aspect-ratio: 1 / 1;
   }
   
   h1 {
-    font-size: 2.5rem;
+    font-size: 2.3rem;
     margin: 0;
     line-height: 1;
   }
   
   h1 span {
     display: block;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     font-weight: 400;
     
   }
@@ -92,22 +92,50 @@
     margin-bottom: 0.75rem;
     height: 2.4em; 
     overflow: hidden;
-  }
-  
+  }  
+
   .nav-controls {
     display: flex;
-    align-items: center;
+    align-items: fl;
     gap: 1rem;
   }
   
-  .hamburger {
+  nav ul li a.active {
+    background-color: var(--button-hover);
+    font-weight: bold;
+}
+
+/* Hamburger Menu */
+.hamburger {
     display: none;
     background: none;
     border: none;
     color: var(--button-text);
     font-size: 1.5rem;
     cursor: pointer;
-  }
+    transition: transform 0.3s ease;
+}
+
+.hamburger.open {
+    transform: rotate(90deg);
+}
+
+/* Dropdown Animation */
+@keyframes slideDown {
+    from { max-height: 0; opacity: 0; }
+    to { max-height: 300px; opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { max-height: 300px; opacity: 1; }
+    to { max-height: 0; opacity: 0; }
+}
+
+nav ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
   
   /* Theme Toggle Button */
 #themeToggle {
@@ -123,11 +151,7 @@
   transform: scale(1.1);
 }
   
-  nav ul {
-    display: flex;
-    gap: 2rem;
-    list-style: none;
-  }
+ 
   
   nav a {
     color: var(--button-text);
@@ -393,31 +417,29 @@
   
     .hamburger {
       display: block;
-      order: 2;
-    }
-  
-    .theme-toggle {
-      order: 1;
-    }
-  
-    nav ul {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background-color: var(--primary-color);
-        flex-direction: column;
-        padding: 1rem;
-        transition: max-height 0.3s ease-out;
-        max-height: 0;
-        overflow: hidden;
-      }
-    
-      nav ul.show {
-        display: flex;
-        max-height: 300px;
-      }
+  }
+
+  nav ul {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background-color: var(--primary-color);
+      flex-direction: column;
+      padding: 1rem;
+      overflow: hidden;
+  }
+
+  nav ul.show {
+      display: flex;
+      animation: slideDown 0.3s ease-out forwards;
+  }
+
+  nav ul.hide {
+      display: flex;
+      animation: slideUp 0.3s ease-out forwards;
+  }
     .view-controls {
       text-align: center;
       margin-bottom: 1rem;
