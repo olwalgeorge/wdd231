@@ -1,82 +1,124 @@
 .discover-grid {
     display: grid;
     grid-template-columns: 300px 1fr;
-    gap: 2rem;
+    gap: 2.5rem;
     max-width: 1200px;
-    margin: 1rem auto;
-    padding: 0 1rem;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
 }
 
 .sidebar {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 2rem;
 }
 
 .info-box {
-    border: 1px solid #ccc;
-    padding: 1rem;
-    border-radius: 4px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .placeholder-box {
     width: 100%;
     height: 150px;
-    background: #eee;
-    margin: 1rem 0;
+    background: linear-gradient(45deg, #f3f3f3, #e6e6e6);
+    margin: 1.5rem 0;
+    border-radius: 8px;
 }
 
 .visitor-message {
-    background-color: #f5f5f5;
-    padding: 1rem;
-    border-radius: 4px;
-    margin-bottom: 1rem;
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid #007bff;
 }
 
 .calendar {
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
 }
 
 .calendar-header {
     display: flex;
     justify-content: space-between;
-    padding: 0.5rem;
-    background: #f5f5f5;
+    padding: 1rem;
+    background: #007bff;
+    color: #ffffff;
 }
 
 .calendar table {
     width: 100%;
-    border-collapse: collapse;
+    border-collapse: separate;
+    border-spacing: 0;
 }
 
 .calendar th, .calendar td {
     text-align: center;
-    padding: 0.5rem;
+    padding: 0.75rem;
+}
+
+.calendar th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+}
+
+.calendar td.today {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+}
+
+.calendar-header span {
+    cursor: pointer;
+}
+
+.calendar-header span:hover {
+    color: #0056b3;
 }
 
 .gallery {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
 }
 
 .gallery figure {
     margin: 0;
     transition: transform 0.3s ease;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.gallery figure:hover {
+    transform: translateY(-5px);
 }
 
 .gallery img {
     width: 100%;
-    height: auto;
-    aspect-ratio: 16/9;
+    height: 200px;
     object-fit: cover;
-    border-radius: 4px;
+    transition: transform 0.3s ease;
+}
+
+.gallery figure:hover img {
+    transform: scale(1.05);
 }
 
 .lazy-image {
     opacity: 0;
-    transition: opacity 0.3s ease-in;
+    transition: opacity 0.5s ease-in;
 }
 
 .lazy-image[src] {
@@ -84,8 +126,9 @@
 }
 
 .gallery figcaption {
-    padding: 0.5rem 0;
+    padding: 1rem;
     text-align: center;
+    background-color: #ffffff;
 }
 
 @media (max-width: 768px) {
