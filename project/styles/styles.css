@@ -121,7 +121,6 @@ li {
     border: 1px solid #ccc;
 }
 
-/* Two-column layout with 4:1 space allocation */
 section .wireframe-container {
     display: flex;
     gap: var(--space-md);
