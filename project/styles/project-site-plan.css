@@ -1,5 +1,5 @@
 :root {
-    --primary-color: hsl(120, 89%, 31%);
+    --primary-color: hsl(120, 98%, 56%);
     --secondary-color: hsl(45, 100%, 50%);
     --text-color: hsl(0, 0%, 20%);
     --accent-color: hsl(0, 100%, 50%);
@@ -17,6 +17,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+header {
+    background-color: var(--text-color);
 }
 
 
@@ -106,10 +110,10 @@ li {
     padding: var(--space-xs);
 }
 
-.primary-color { background-color: var(--primary-color); }
+.primary-color { background-color: var(--primary-color); color: black ; }
 .secondary-color { background-color: var(--secondary-color); color: black; }
 .text-color { background-color: var(--text-color); }
-.accent-color { background-color: var(--accent-color); }
+.accent-color { background-color: var(--accent-color); color: black; }
 .background-color { background-color: var(--background-color); color: black; border: 1px solid #ccc; }
 
 /* Wireframe Section */
