@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover - Kisumu Chamber of Commerce</title>
+    <link rel="stylesheet" href="styles/directory.css">
+    <link rel="stylesheet" href="styles/discover.css">
+    <script src="scripts/directory.js" defer></script>
+    <script src="scripts/discover.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="nav-wrapper">
+            <div class="logo-title">
+                <img src="images/logo.webp" alt="Chamber of Commerce Logo" class="logo">
+                <h1>Kisumu<span>Chamber of Commerce</span></h1>
+            </div>
+            <div class="nav-controls">
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="directory.html">Directory</a></li>
+                        <li><a href="join.html">Join</a></li>
+                        <li><a href="discover.html" class="active">Discover</a></li>
+                    </ul>
+                </nav>
+                <button id="themeToggle" aria-label="Toggle Theme">🌙</button>
+                <button class="hamburger" aria-label="Menu" aria-expanded="false">&#8801;</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="discover-grid">
+        <aside class="sidebar">
+            <div class="visitor-message"></div>
+            <section class="info-box">
+                <h2>Heading</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate</p>
+            </section>
+            
+            <section class="info-box">
+                <h2>Heading</h2>
+                <div class="placeholder"></div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra</p>
+            </section>
+            
+            <div class="calendar">
+                <div class="calendar-header">
+                    <span class="prev">&#10094;</span>
+                    <span>June 24, 2024</span>
+                    <span class="next">&#10095;</span>
+                </div>
+                <table>
+                    <tr>
+                        <th>Su</th><th>Mo</th><th>Tu</th>
+                        <th>We</th><th>Th</th><th>Fr</th><th>Sa</th>
+                    </tr>
+                    <!-- Calendar dates would be populated by JS -->
+                </table>
+            </div>
+        </aside>
+
+        <section class="gallery">
+            <figure>
+                <img src="images/placeholder.jpg" data-src="images/image1.jpg" alt="Local attraction 1" loading="lazy">
+                <figcaption>Local attraction 1</figcaption>
+            </figure>
+            <!-- Repeat for 5 more images -->
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <p>Kisumu Chamber of Commerce</p>
+                <p>P.O. Box 824-40100 Kisumu, Kenya</p>
+                <p>info@kisumucoke.or.ke</p>
+                <p>(254) 57 2020505</p>
+            </div>
+            <div class="social-links">
+                <a href="#" aria-label="YouTube"><img src="images/youtube-icon.webp" alt="YouTube"></a>
+                <a href="#" aria-label="Twitter"><img src="images/twitter-icon.webp" alt="Twitter"></a>
+                <a href="#" aria-label="LinkedIn"><img src="images/linkedin-icon.webp" alt="LinkedIn"></a>
+            </div>
+            <div class="footer-credits">
+                <p>&copy; <span id="year"></span> Kisumu Chamber of Commerce</p>
+                <p>George Olwal | WDD 231</p>
+                <p>Last Modified: <span id="lastModified"></span></p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

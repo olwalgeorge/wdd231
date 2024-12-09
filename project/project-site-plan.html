@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Site plan for Crop Disease and Pest Management System project.">
+    <meta name="author" content="George Olwal">
+    <title>CropDaktari - Site Plan - WDD 131 - Dynamic Web Fundamentals</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans&display=swap" rel="stylesheet">
+    <script src="scripts/scripts.js" defer></script>
+    
+</head>
+<body>
+    <header>
+        <h1>WDD 131 Final Project Site Plan - <span id="h-name">George Olwal</span></h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>Site Name</h2>
+            <p><strong>CropDaktari</strong></p>
+            <p>Daktari is a Swahili word for doctor, therefore CropDaktari was coined to effectively communicates the main purpose of the website - diagnosis of crop diseases and pests. It's concise, memorable, and relevant to the project's goal of crop management and protection.</p>
+        </section>
+
+        <section>
+            <h2>Site Purpose</h2>
+            <p>CropDaktari serves as a comprehensive tool for farmers to:</p>
+            <ul>
+                <li>Diagnose crop diseases using image recognition technology.</li>
+                <li>Identify pests affecting their crops.</li>
+                <li>Access location-based data on crop health and pest prevalence.</li>
+                <li>View statistics and information on crop diseases and pests.</li>
+                <li>Get recommendations for disease and pest management.</li>
+            </ul>
+            <p>The site aims to promote precision farming methods, improve crop health, and contribute to food security by enabling data-driven decision-making in agriculture.</p>
+        </section>
+
+        <section>
+            <h2>Scenarios</h2>
+            <ol>
+                <li>How can I quickly identify a disease affecting my tomato plants using a photo?</li>
+                <li>What are the most common pests in my area based on recent reports from other farmers?</li>
+                <li>How do I access historical data on crop diseases in my region to plan for the next growing season?</li>
+            </ol>
+        </section>
+
+        <section class="color-schema">
+            <h2>Color Schema</h2>
+            <div class="color-samples">
+                <div class="color-sample primary-color">Primary Color</div>
+                <div class="color-sample secondary-color">Secondary Color</div>
+                <div class="color-sample text-color">Text Color</div>
+                <div class="color-sample accent-color">Accent Color</div>
+                <div class="color-sample background-color">Background Color</div>
+            </div>
+            <p>The primary color (hsl(120, 60%, 50%)) represents growth and health, used for main headings and interactive elements.</p>
+            <p>The secondary color (hsl(45, 100%, 50%)) complements the primary color and is used for highlights and secondary elements.</p>
+            <p>The text color (hsl(0, 0%, 20%)) ensures good readability against light backgrounds.</p>
+            <p>The accent color (hsl(0, 100%, 50%)) is used sparingly for warnings or important information.</p>
+            <p>The background color (hsl(0, 0%, 98%)) provides a clean and neutral base for the site.</p>
+        </section>
+
+        <section>
+            <h2>Typography</h2>
+            <p><strong>Headings:</strong> Roboto, sans-serif</p>
+            <p><strong>Body Text:</strong> Open Sans, sans-serif</p>
+            <p>This combination provides a modern look while ensuring readability across devices.</p>
+        </section>
+
+        <section>
+            <h2>Wireframe - Desktop and mobile view</h2>
+            <div class="wireframe-container">
+                <figure>
+                    <img src="images/wireframe-desktop.png" alt="Wireframe of CropDaktari desktop view" class="wireframe desktop">
+                    <figcaption>Desktop view</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/wireframe-mobile.png" alt="Wireframe of CropDaktari mobile view" class="wireframe mobile">
+                    <figcaption>Mobile view</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section>
+            <h2>Site Content</h2>
+            <h3>Home Page</h3>
+            <p>Landing page for the website with introduction and brief sectional information to other pages.</p>
+
+            <h3>Disease Diagnosis</h3>
+            <ul>
+                <li>Capture image and use external API to detect plant disease and general health.</li>
+                <li>Use external API to get map location of the captured image.</li>
+                <li>Use internal API to log in details of diagnosis including location.</li>
+            </ul>
+
+            <h3>Pest Diagnosis</h3>
+            <ul>
+                <li>Capture image and use external API to detect the pest.</li>
+                <li>Use external API to get map location of the captured image.</li>
+                <li>Use internal API to log in details of the pest including location.</li>
+            </ul>
+
+            <h3>Statistics & Information Page</h3>
+            <ul>
+                <li>Query and view existing diagnosis.</li>
+                <li>Query affected crop information and use external API to get disease and pest details and possible treatment.</li>
+            </ul>
+
+            <h3>Contact Page</h3>
+            <ul>
+                <li>Provide contact information.</li>
+                <li>Provide contact form.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Project Rationale</h2>
+            <p>This project will help express mastery of local and external API implementations, incorporating wayfinding and other concepts learned in the WDD231 course. It's part of a larger initiative to build a crop management system focused on precision farming. The goal is to enable farmers to make data-driven decisions that can improve farm efficiency, boost production, and alleviate food insecurity. Additionally, the sparing use of resources contributes to combating the effects of climate change.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="currentyear"></span> CropDaktari - George Olwal, Kenya</p>
+        <p>Last Modification: <span id="lastModified"></span></p>
+    </footer>
+</body>
+</html>

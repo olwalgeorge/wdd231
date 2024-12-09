@@ -1,0 +1,247 @@
+:root {
+    --primary-color: hsl(120, 60%, 50%);
+    --secondary-color: hsl(45, 100%, 50%);
+    --text-color: hsl(0, 0%, 20%);
+    --accent-color: hsl(0, 100%, 50%);
+    --background-color: hsl(0, 0%, 98%);
+    --font-heading: 'Roboto', sans-serif;
+    --font-body: 'Open Sans', sans-serif;
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 2rem;
+    --space-lg: 4rem;
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+/* Typography */
+body {
+    font-family: var(--font-body);
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    padding: var(--space-md);
+}
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    margin-bottom: var(--space-md);
+}
+
+h1 {
+    color: var(--primary-color);
+    text-align: center;
+    padding: var(--space-md) 0;
+    font-size: 2.5em;
+}
+
+h2 {
+    color: hsl(120, 60%, 40%);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: var(--space-sm);
+    font-size: 2em;
+}
+
+h3 {
+    color: hsl(120, 60%, 30%);
+    font-size: 1.5em;
+}
+
+p {
+    margin-bottom: var(--space-sm);
+}
+
+/* Layout */
+header, main, footer {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+section {
+    margin-bottom: var(--space-lg);
+}
+
+/* Lists */
+ul, ol {
+    margin-left: var(--space-md);
+    margin-bottom: var(--space-md);
+}
+
+li {
+    margin-bottom: var(--space-xs);
+}
+
+/* Color Schema */
+.color-schema {
+    background-color: hsl(0, 0%, 95%);
+    padding: var(--space-md);
+    border-radius: 5px;
+}
+
+.color-samples {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: var(--space-md);
+}
+
+.color-sample {
+    width: calc(20% - 10px);
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-bottom: var(--space-sm);
+    text-align: center;
+    padding: var(--space-xs);
+}
+
+.primary-color { background-color: var(--primary-color); }
+.secondary-color { background-color: var(--secondary-color); color: black; }
+.text-color { background-color: var(--text-color); }
+.accent-color { background-color: var(--accent-color); }
+.background-color { background-color: var(--background-color); color: black; border: 1px solid #ccc; }
+
+/* Wireframe Section */
+.wireframe {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0;
+    border: 1px solid #ccc;
+}
+
+/* Two-column layout with 4:1 space allocation */
+section .wireframe-container {
+    display: flex;
+    gap: var(--space-md);
+}
+
+.wireframe-container .desktop {
+    flex: 4;
+}
+
+.wireframe-container .mobile {
+    flex: 1;
+}
+
+figure {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+figcaption {
+    order: -1;
+    margin-bottom: var(--space-sm);
+    font-size: 0.9em;
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+figure img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: var(--space-lg);
+    padding-top: var(--space-md);
+    border-top: 1px solid #ccc;
+}
+
+
+/* Responsive design */
+@media (max-width: 600px) {
+    body {
+        padding: var(--space-sm);
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.7em;
+    }
+
+    h3 {
+        font-size: 1.3em;
+    }
+
+    .color-sample {
+        width: calc(50% - 10px);
+    }
+    .wireframe-container {
+        flex-direction: column;
+    }
+
+    .wireframe-container .desktop, .wireframe-container .mobile {
+        flex: 1;
+    }
+}
+
+/* Additional styles */
+strong {
+    font-weight: bold;
+}
+
+.color-schema p {
+    font-size: 0.9em;
+    margin-bottom: var(--space-sm);
+}
+
+#h-name {
+    font-style: italic;
+}
+
+/* Hover effects */
+.color-sample:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Form styles (for potential contact form) */
+input, textarea {
+    width: 100%;
+    padding: var(--space-sm);
+    margin-bottom: var(--space-sm);
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: var(--primary-color);
+    color: white;
+    padding: var(--space-sm) var(--space-md);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: hsl(120, 60%, 40%);
+}
