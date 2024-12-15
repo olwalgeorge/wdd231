@@ -163,6 +163,16 @@ body {
     transition: background-color 0.3s ease;
 }
 
+.btn-primary:hover, .btn-secondary:hover {
+    background-color: #0C8A4F;
+}
+
+.btn-secondary:hover {
+    background-color: #E8F5E9;
+    color:hsl(from color h s l)
+    
+}
+
 .hero-image img {
     width: 100%;
     height: auto;
@@ -261,21 +271,30 @@ footer {
 
 .footer-links a:hover {
     color: white;
+    
+    font-weight: bold;
+    transition: font-weight 0.3s ease;
 }
+
+
+    
+
+
 
 .social-icons {
     display: flex;
     gap: 1rem;
 }
 
-.social-icons a {
-    color: rgba(255,255,255,0.7);
+.social-icons a {    
     text-decoration: none;
-    transition: color 0.3s ease;
+    
 }
 
+
 .social-icons a:hover {
-    color: white;
+    transform: scale(1.2);   
+
 }
 
 .footer-bottom {
