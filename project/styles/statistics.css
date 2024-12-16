@@ -54,7 +54,7 @@ h1 {
     padding: 8px 16px;
     border: 1px solid #ddd;
     border-radius: 4px;
-    background: white;
+    background: #E8F5E9;
     cursor: pointer;
 }
 
@@ -62,6 +62,9 @@ h1 {
     background: #00A651;
     color: white;
     border: none;
+}
+.export-btn > img {
+    filter: invert(100%);
 }
 
 /* Table Styles */

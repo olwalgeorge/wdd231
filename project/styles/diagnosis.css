@@ -46,6 +46,11 @@
     font-weight: 500;
     margin: 0 auto 2rem;
     cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.capture-btn img {
+    filter: invert(100%)
 }
 
 .upload-area {
@@ -106,6 +111,7 @@
     border: none;
     font-weight: 500;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .map-container {
@@ -134,3 +140,4 @@
         padding: 1.5rem;
     }
 }
+
