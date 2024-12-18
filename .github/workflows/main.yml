@@ -1,10 +1,31 @@
+name: Deploy Disease Diagnosis Page
+
+on:
+  push:
+    branches:
+      - main
+
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Replace API Key
-        env:
-          MAP_API_KEY: ${{ secrets.MAP_API_KEY }}
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Replace API key placeholder
         run: |
-          sed -i 's/GMAP_KEY/'$MAP_API_KEY'/g' disease-diagnosis.html
+          sed -i 's/GMAP_KEY/${{ secrets.MAP_API_KEY }}/g' disease-diagnosis.html
+
+      - name: Deploy to hosting service
+        run: |
+          # Add your deployment commands here
+          # For example, using Firebase Hosting:
+          # firebase deploy --only hosting
