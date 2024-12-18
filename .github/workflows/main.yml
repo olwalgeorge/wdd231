@@ -1,0 +1,10 @@
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Replace API Key
+        env:
+          MAP_API_KEY: ${{ secrets.MAP_API_KEY }}
+        run: |
+          sed -i 's/GMAP_KEY/'$MAP_API_KEY'/g' disease-diagnosis.html
