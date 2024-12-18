@@ -6,7 +6,8 @@
     <title>CropDaktari - Disease Diagnosis</title>
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="stylesheet" href="styles/diagnosis.css">
-    <script src="scripts/script.js"></script>
+    <script src="scripts/diagnosis.js" defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=GMAP_KEY&callback=initMap" async defer></script>
 </head>
 <body>
     <!-- Header from home page -->
@@ -27,42 +28,44 @@
         </button>
     </nav>
 
-    <!-- Main Content -->
     <main class="diagnosis-container">
         <section class="diagnosis-section">
             <h1>Disease Diagnosis</h1>
             <p class="subtitle">Capture or upload an image of your plant to identify potential disease problems</p>
 
-            <div class="capture-section">
-                <button class="capture-btn">
-                    <img src="images/camera (1).svg" alt="Camera Icon">
-                    Capture Image
-                </button>
-
-                <div class="upload-area">
-                    <div class="upload-icon">
-                        <img src="images/upload (1).svg" alt="Upload Icon">
+            <div class="diagnosis-content">
+                <div class="action-buttons">
+                    <div class="left-buttons">
+                        <button class="action-btn">
+                            <img src="images/upload-icon.svg" alt="Upload">
+                            Upload photo
+                        </button>
+                        <button class="action-btn">
+                            <img src="images/camera-icon.svg" alt="Camera">
+                            Take photo
+                        </button>
                     </div>
-                    <p>Drag and drop your image here</p>
-                    <span>or</span>
-                    <a href="#" class="browse-link">Browse Files</a>
-                </div>
-            </div>
-
-            <div class="location-section">
-                <div class="location-header">
-                    <h2>Location Detection</h2>
-                    <button class="detect-btn">
-                        <img src="images/location-icon.png" alt="Location Icon">
-                        Detect My Location
+                    <button class="identify-btn">
+                        <img src="images/arrow-icon.svg" alt="Arrow">
+                        Identify
                     </button>
                 </div>
-                <div class="map-container">
-                    <img src="map-placeholder.jpg" alt="Location Map">
+                
+                <div class="location-toggle">
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
+                    <span>Include location</span>
+                </div>
+
+                <div class="map-section">
+                    <div id="map"></div>
                 </div>
             </div>
         </section>
     </main>
+
 
      <!-- Footer Section -->
      <footer>
