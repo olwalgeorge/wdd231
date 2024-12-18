@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -14,18 +14,6 @@ jobs:
 
       - name: Replace API key placeholder
         run: |
-          sed -i 's/GMAP_KEY/${{ secrets.MAP_API_KEY }}/g' disease-diagnosis.html
+          sed -i 's/GMAP_KEY/${{ secrets.GOOGLE_MAPS_API_KEY }}/g' project/disease-diagnosis.html
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v3
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
-        with:
-          path: '.'
-
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v2
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+      # Add other deployment steps here
