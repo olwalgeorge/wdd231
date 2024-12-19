@@ -138,7 +138,7 @@ body {
     gap: 1rem;
 }
 
-.btn-primary {
+.btn-primary, .identify-btn {
     padding: 0.875rem 2rem;
     background: var(--primary-color);
     color: white;
@@ -152,7 +152,7 @@ body {
     transition: background-color 0.3s ease;
 }
 
-.btn-secondary {
+.btn-secondary, .action-btn{
     padding: 0.875rem 2rem;
     background: #E8F5E9;
     color: var(--primary-color);
@@ -164,11 +164,11 @@ body {
 }
 
 .btn-primary:hover, .btn-secondary:hover, 
-.capture-btn:hover, .export-btn:hover {
+.capture-btn:hover, .export-btn:hover, .identify-btn:hover {
     background-color: #0C8A4F;
 }
 
-.btn-secondary:hover, .filter-btn:hover {
+.btn-secondary:hover, .filter-btn:hover, .action-btn:hover {
     background-color: white;
     color:hsl(from color h s l)
     
