@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let map = null;
     let marker = null;
     let stream = null;
-
+    
     function initMap() {
         if (!map) {
             map = new google.maps.Map(document.getElementById('map'), {
