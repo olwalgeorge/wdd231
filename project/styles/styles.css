@@ -1,5 +1,5 @@
 :root {
-    --primary-color: #0D9F61;
+    --primary-color: #0A865A;
     --secondary-color: #E8F5E9;
     --dark-bg: #1E2A38;
     --text-dark: #1A1A1A;
@@ -124,7 +124,7 @@ body {
     color: white;
     border: none;
     border-radius: 8px;
-    font-weight: 500;
+    font-weight: 200;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -134,11 +134,11 @@ body {
 
 .btn-secondary, .action-btn{
     padding: 0.875rem 2rem;
-    background: #E8F5E9;
-    color: var(--primary-color);
+    background: #F0FFF0;
+    color: green;
     border: 2px solid var(--primary-color);
     border-radius: 8px;
-    font-weight: 500;
+    font-weight: 200;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
@@ -206,7 +206,7 @@ body {
 }
 
 .learn-more {
-    color: var(--primary-color);
+    color: #2E7D32;
     text-decoration: none;
     font-weight: 500;
     display: flex;
