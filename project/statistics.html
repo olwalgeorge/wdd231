@@ -70,7 +70,7 @@
                 </button>
             </div>
         </div>
-
+    
         <!-- Data Table -->
         <div class="table-container">
             <table>
@@ -85,35 +85,30 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Jan 15, 2025</td>
-                        <td>Disease</td>
-                        <td>Leaf Rust</td>
-                        <td>Nairobi, Kenya</td>
-                        <td><span class="status pending">Pending</span></td>
-                        <td><img src="images/view.svg" alt="View" class="action-icon"></td>
-                    </tr>
-                    <tr>
-                        <td>Jan 14, 2025</td>
-                        <td>Pest</td>
-                        <td>Aphids</td>
-                        <td>Mombasa, Kenya</td>
-                        <td><span class="status completed">Completed</span></td>
-                        <td><img src="images/view.svg" alt="View" class="action-icon"></td>
-                    </tr>
+                    <!-- Table body will be populated by JavaScript -->
                 </tbody>
             </table>
         </div>
-
+    
         <!-- Pagination -->
         <div class="pagination">
-            <p>Showing 1-2 of 25 results</p>
+            <p>Showing 1-10 of 10 results</p>
             <div class="pagination-buttons">
                 <button class="prev-btn">Previous</button>
                 <button class="next-btn">Next</button>
             </div>
         </div>
+    
+        <!-- Modal HTML will be inserted by JavaScript -->
+        <div id="modal" class="modal" style="display:none;">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <img id="modal-image" src="" alt="Diagnosis Image">
+                <p id="modal-diagnosis"></p>
+            </div>
+        </div>
     </main>
+    
 
     <footer>
         <!-- Footer Content -->
