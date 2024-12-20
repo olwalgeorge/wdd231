@@ -3,16 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CropDaktari - Disease Diagnosis</title>
+    <meta name="description" content="CropDaktari is an AI-powered platform for farmers to instantly identify plant diseases and pests.">
+    <meta name="author" content="George Olwal">
+    <meta property="og:title" content="CropDaktari">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/og-image.jpg">
+    <meta property="og:url" content="https://olwalgeorge.github.io/wdd231/project/index.html">
+    <meta property="og:description" content="CropDaktari is an AI-powered platform for farmers to instantly identify plant diseases and pests.">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CropDaktari">
+    <meta name="twitter:description" content="CropDaktari is an AI-powered platform for farmers to instantly identify plant diseases and pests.">
+    <meta name="twitter:image" content="images/twitter-image.jpg">
+    <title>CropDaktari</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="stylesheet" href="styles/diagnosis.css">
+    <script src="scripts/scripts.js" defer></script>
     <script src="scripts/diagnosis.js" defer></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key="></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=API_KEY"></script>
+    <script id="kindwise-api" data-api-key="API-KEY"></script>
       
     
 </head>
 <body>
-    <!-- Header from home page -->
+    <header class="header">
     <nav class="navbar">
         <div class="nav-logo">
             <img src="images/logo.png" alt="Leaf Icon">
@@ -25,9 +46,17 @@
             <a href="statistics.html">Statistics</a>
             <a href="contact.html">Contact</a>
         </div>
-        <button class="hamburger-menu">
-            <img src="images/menu-icon.png" alt="Menu Icon">
+        <button class="hamburger-menu" aria-label="Toggle menu">
+            <img src="images/menu-icon.svg" alt="Menu Icon">
         </button>
+    </nav>
+    </header>
+
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="divider"> &gt; </span>
+        <a href="disease-diagnosis.html" class="current-page">Disease Diagnosis</a>
     </nav>
 
     <main class="diagnosis-container">
@@ -36,6 +65,10 @@
             <p class="subtitle">Capture or upload an image of your plant to identify potential disease problems</p>
 
             <div class="diagnosis-content">
+                <div class="image-display">
+                    <img id="captured-image" src="" alt="Captured Image" style="display:none; width: 100%; max-width: 300px; margin-bottom: 1rem;"/>
+                </div>
+                
                 <div class="action-buttons">
                     <div class="left-buttons">
                         <button class="action-btn">
