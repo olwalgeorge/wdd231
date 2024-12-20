@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const capturedImage = document.getElementById('captured-image');
     const identifyButton = document.querySelector('.identify-btn');
     const kindwiseApiKey = document.getElementById('kindwise-api').getAttribute('data-api-key');
-    console.log('API Key:', kindwiseApiKey);
 
     let map = null;
     let marker = null;
@@ -35,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         });
                     },
                     (error) => {
-                        console.error('Geolocation error:', error);
+                        alert('Geolocation error:');
                     }
                 );
             }
@@ -55,7 +54,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     takePhotoButton.addEventListener('click', () => {
-        console.log('Take photo button clicked');
         if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
             navigator.mediaDevices.getUserMedia({ video: true })
                 .then(videoStream => {
@@ -70,13 +68,11 @@ document.addEventListener('DOMContentLoaded', () => {
                         canvas.getContext('2d').drawImage(video, 0, 0);
                         capturedImage.src = canvas.toDataURL('image/jpeg');
                         capturedImage.style.display = 'block';
-                        console.log('Photo captured');
                         stream.getTracks().forEach(track => track.stop());
                     });
                 })
                 .catch(error => {
-                    console.error('Error accessing camera:', error);
-                    alert('Unable to access camera. Please make sure you have given permission.');
+                    alert('Error accessing camera:');
                 });
         } else {
             alert('Your browser does not support camera access.');
@@ -84,7 +80,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     uploadButton.addEventListener('click', () => {
-        console.log('Upload button clicked');
         const fileInput = document.createElement('input');
         fileInput.type = 'file';
         fileInput.accept = 'image/*';
@@ -95,7 +90,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 reader.onload = (e) => {
                     capturedImage.src = e.target.result;
                     capturedImage.style.display = 'block';
-                    console.log('Image uploaded');
                 };
                 reader.readAsDataURL(file);
             }
@@ -105,7 +99,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     identifyButton.addEventListener('click', identifyCropDisease);
     function identifyCropDisease() {
-        console.log('Identify button clicked');
         if (!capturedImage.src) {
             alert('Please capture or upload an image first.');
             return;
@@ -125,7 +118,6 @@ document.addEventListener('DOMContentLoaded', () => {
             plant_details: ["common_names", "url", "wiki_description", "taxonomy"]
         };
     
-        console.log('Sending request to Kindwise API');
         fetch('https://crop.kindwise.com/api/v1/identification', {
             method: 'POST',
             headers: {
@@ -143,19 +135,15 @@ document.addEventListener('DOMContentLoaded', () => {
             return response.json();
         })
         .then(data => {
-            console.log('Identification result:', data);
             displayResults(data);
         })
         .catch(error => {
-            console.error('Error:', error);
             alert('An error occurred during identification. Please try again.');
         });
     }
     
     function displayResults(data) {
-        console.log('Displaying results:', data);
         // Implement this function to show the results to the user
-        // Example: You could create HTML elements to display the plant details
     }
 
     // Set initial state
@@ -164,3 +152,4 @@ document.addEventListener('DOMContentLoaded', () => {
     // Handle toggle changes
     locationToggle.addEventListener('change', toggleMap);
 });
+
