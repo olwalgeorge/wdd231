@@ -249,8 +249,7 @@ footer {
 .footer-links a {
     display: block;
     color: rgba(255,255,255,0.7);
-    text-decoration: none;
-    margin-bottom: 0.75rem;
+    text-decoration: none;    
     transition: color 0.3s ease;
 }
 
