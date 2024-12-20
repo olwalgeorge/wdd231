@@ -254,11 +254,20 @@ footer {
 }
 
 .footer-bottom {
-    padding-top: 2rem;
-    border-top: 1px solid rgba(255,255,255,0.1);
-    text-align: center;
-    color: rgba(255,255,255,0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 }
+
+.footer-bottom p {
+    margin: 0;
+}
+
+.footer-bottom p:not(:last-child)::after {
+    content: " | ";
+}
+
 
 .active {
     border-bottom: 2px solid var(--primary-color);

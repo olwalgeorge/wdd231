@@ -35,3 +35,12 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+// Update last modified date
+document.getElementById('year').textContent = new Date().getFullYear();
+
+const lastModified = new Date(document.lastModified);
+document.getElementById('lastModified').textContent = lastModified.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+});
