@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     function displayResults(data) {
-        // Implement this function to show the results to the user
+        // user interface to display results
     }
 
     // Set initial state
