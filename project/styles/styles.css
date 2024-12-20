@@ -149,7 +149,7 @@ body {
 
 .btn-secondary:hover, .filter-btn:hover, .action-btn:hover {
     background-color: white;
-    color:hsl(from color h s l)
+    color: hsl(120, 60%, 40%);
     
 }
 

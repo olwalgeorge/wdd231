@@ -80,3 +80,12 @@ document.addEventListener('DOMContentLoaded', function() {
         localStorage.setItem('lastVisit', currentDate.toISOString());
     }
 });
+
+document.querySelector('.btn-primary').addEventListener('click', () => {
+    window.location.href = 'disease-diagnosis.html'; 
+});
+
+document.querySelector('.btn-secondary').addEventListener('click', () => {
+    window.location.href = 'pest-diagnosis.html'; 
+});
+
